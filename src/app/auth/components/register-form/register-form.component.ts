@@ -9,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class RegisterFormComponent implements OnInit {
   signUpForm = this.fb.group({
     email: ["",],
     password: ["",],
-    confirmPassword: ["",],
     nickname: ["",],
-    checkbox: ["", ],
     balance: 0,
     cardInfo:{},
     crypto:[],

@@ -13,21 +13,9 @@
       />
     </label>
     <label>
-      Confirm Password:
-      <input
-        type="password"
-        formControlName="confirmPassword"
-        placeholder="repeat password"
-      />
-    </label>
-    <label>
       Nickname:
       <input type="text" formControlName="nickname" />
     </label>
-    <div class="checkbox">
-      <input type="checkbox" formControlName="checkbox" />
-      I have read the agreement
-    </div>
     <input
       type="submit"
       [disabled]="!signUpForm.valid"
