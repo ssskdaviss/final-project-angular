@@ -16,9 +16,10 @@ export class RegisterFormComponent implements OnInit {
     password: ["",],
     confirmPassword: ["",],
     nickname: ["",],
-    phoneNumber: ["",],
-    website: ["",],
-    checkbox: ["",]
+    checkbox: ["", ],
+    balance: 0,
+    cardInfo:{},
+    crypto:[],
   }, {
     validators: []
   });

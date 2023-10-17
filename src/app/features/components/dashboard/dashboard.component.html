@@ -1,0 +1,31 @@
+<div class="dashboard">
+    <h1>Crypto Dashboard</h1>
+    <table class="crypto-table">
+      <thead>
+        <tr>
+        <th>Rank</th>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>Price (USD)</th>
+          <th>Market Cap (USD)</th>
+          <th>VWAP (24Hr)</th>	
+          <th>Supply</th>
+          <th>Volume(24Hr)</th>
+          <th>Change(24Hr)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crypto of cryptoData">
+        <td>{{ crypto.rank }}</td>
+        <td>{{ crypto.name }}</td>
+        <td>{{ crypto.symbol }}</td>
+        <td>{{ crypto.priceUsd  }}</td>
+        <td>{{ crypto.marketCapUsd }}</td>
+        <td>{{ crypto.vwap24Hr }}</td>
+        <td>{{ crypto.supply }}</td>
+        <td>{{ crypto.volumeUsd24Hr  }}</td>
+        <td>{{ crypto.changePercent24Hr }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

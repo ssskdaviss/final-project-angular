@@ -39,10 +39,11 @@ export class LoginComponent {
           if (authenticatedUser) {
             console.log('Login successful:', authenticatedUser);
             localStorage.setItem('email', authenticatedUser.email);
-            this.router.navigate(['/home']);
+            localStorage.setItem('password', authenticatedUser.password);
+            this.router.navigate(['/dashboard']);
 
           } else {
-            console.error('Login failed: Invalid credentials');
+            alert('Login failed: Invalid credentials');
           }
         },
         (error) => {
