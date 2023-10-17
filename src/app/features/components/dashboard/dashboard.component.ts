@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { CryptoService } from 'src/app/services/crypto.service';
+import { CryptoData } from 'src/app/core/interfaces/interfaces';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,18 +12,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  cryptoData: any[] = [];
+  cryptoData: CryptoData[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private cryptoService: CryptoService) {}
 
   ngOnInit(): void {
     this.fetchCryptoData();
   }
 
   fetchCryptoData() {
-    const apiUrl = 'https://api.coincap.io/v2/assets';
-
-    this.http.get(apiUrl).subscribe((response: any) => {
+    this.cryptoService.fetchCryptoData().subscribe((response) => {
       this.cryptoData = response.data;
     });
   }
