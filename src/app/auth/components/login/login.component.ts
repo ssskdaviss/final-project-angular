@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { User } from 'src/app/core/interfaces/interfaces';
 
-interface User { //sheqmeni
-  email: string;
-  password: string;
-}
+
 
 @Component({
   selector: 'app-login',
@@ -40,6 +38,7 @@ export class LoginComponent {
           );
           if (authenticatedUser) {
             console.log('Login successful:', authenticatedUser);
+            localStorage.setItem('email', authenticatedUser.email);
             this.router.navigate(['/home']);
 
           } else {
