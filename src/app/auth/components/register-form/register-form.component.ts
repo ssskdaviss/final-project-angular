@@ -17,6 +17,7 @@ export class RegisterFormComponent implements OnInit {
     email: ["",],
     password: ["",],
     nickname: ["",],
+    phoneNumber: ["",],
     balance: 0,
     cardInfo:{},
     crypto:[],
@@ -45,18 +46,6 @@ export class RegisterFormComponent implements OnInit {
   }
 
 
-
-  public passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
-    const password = control.get('password');
-    const confirmPassword = control.get('confirmPassword');
-    if (password && confirmPassword && password.value !== confirmPassword.value) {
-      return { passwordMismatch: true };
-    }
-    return null;
-  }
-
-
-
   public englishValidator(control: FormControl): ValidationErrors | null {
     const pattern = /^[a-zA-Z0-9]*$/;
     const value = control.value;
@@ -65,8 +54,6 @@ export class RegisterFormComponent implements OnInit {
     }
     return null;
   }
-
-
 
   public phoneNumberValidator(control: FormControl): ValidationErrors | null {
     const pattern = /^\+995\d{9}$/;
@@ -77,16 +64,7 @@ export class RegisterFormComponent implements OnInit {
     return null;
   }
 
-  public websiteValidator(control: FormControl): ValidationErrors | null {
-    const pattern = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$/;
-    const value = control.value;
-    if (!pattern.test(value)) {
-      return { websiteFormat: true };
-    }
-    return null;
-  }
-
-
+ 
   public resetForm(): void {
     this.signUpForm.reset();
     this.editingIndex = null;

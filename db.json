@@ -4,6 +4,7 @@
       "email": "john.doe@gmail.com",
       "password": "john1234",
       "nickname": "john",
+      "phoneNumber": "+995567567567",
       "balance": 0,
       "cardInfo": {},
       "crypto": [],
@@ -13,10 +14,21 @@
       "email": "",
       "password": "",
       "nickname": "",
+      "phoneNumber": "",
       "balance": 0,
       "cardInfo": {},
       "crypto": null,
       "id": 2
+    },
+    {
+      "email": "aaa",
+      "password": "aaa",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "cardInfo": {},
+      "crypto": null,
+      "id": 3
     }
   ]
 }
