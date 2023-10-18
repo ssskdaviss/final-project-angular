@@ -1,10 +1,6 @@
 <div class="dashboard">
   <h1>Crypto Dashboard</h1>
-  <input
-    type="text"
-    [(ngModel)]="searchText"
-    placeholder="Search Crypto"
-  />
+  <input type="text" [(ngModel)]="searchText" placeholder="Search Crypto" />
   <table class="crypto-table">
     <thead>
       <tr>
@@ -27,19 +23,29 @@
           <td>{{ crypto.rank }}</td>
           <td>{{ crypto.name }}</td>
           <td>{{ crypto.symbol }}</td>
-          <td>$ {{ crypto.priceUsd  | number: '2.0-1' }}</td>
+          <td>$ {{ crypto.priceUsd | number : "2.0-1" }}</td>
           <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
-          <td>$ {{ crypto.vwap24Hr| number: '2.0-1'}}</td>
+          <td>$ {{ crypto.vwap24Hr | number : "2.0-1" }}</td>
           <td>{{ crypto.supply | numberFormat }}</td>
-          <td>$ {{ crypto.volumeUsd24Hr | numberFormat}}</td>
-          <td>{{ crypto.changePercent24Hr | number:'1.2-2'}} %</td>
+          <td>$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
+          <td>{{ crypto.changePercent24Hr | number : "1.2-2" }} %</td>
+          <td>
+            <a [routerLink]="['/crypto', crypto.id, 'history']">View History</a>
+          </td>
         </ng-container>
       </tr>
     </tbody>
   </table>
   <div class="pagination-controls">
-    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
     <span>Page {{ currentPage }}</span>
-    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= cryptoData.length">Next</button>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage * itemsPerPage >= cryptoData.length"
+    >
+      Next
+    </button>
   </div>
 </div>

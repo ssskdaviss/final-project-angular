@@ -1,0 +1,20 @@
+<div class="crypto-history">
+    <h1>Crypto History for {{ cryptoId }}</h1>
+    <button (click)="changeInterval('d1')">1 Year</button>
+    <button (click)="changeInterval('h1')">1 Month</button>
+    <button (click)="changeInterval('m1')">1 Day</button>
+    <table class="crypto-history-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Price (USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of cryptoHistory">
+          <td>{{ data.date | date: 'short' }}</td>
+          <td>$ {{ data.priceUsd | number: '2.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

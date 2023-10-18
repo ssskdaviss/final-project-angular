@@ -4,6 +4,7 @@ export interface User {
   }
 
   export interface CryptoData {
+    id: string;
     rank: number;
     name: string;
     symbol: string;
@@ -17,4 +18,13 @@ export interface User {
   
   export interface CryptoResponse {
     data: CryptoData[];
+  }
+  
+  export interface CryptoHistoryData {
+    date: number; 
+    priceUsd: number;
+  }
+  
+  export interface CryptoHistoryResponse {
+    data: CryptoHistoryData[];
   }

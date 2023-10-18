@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
+import { CryptoHistoryComponent } from './features/components/crypto-history/crypto-history.component';
 
 export const routes: Routes = [
   {
@@ -30,11 +31,9 @@ export const routes: Routes = [
       .then(m => m.DashboardComponent),
       canActivate: [AuthGuard]
    
-  }
+  } , 
+  { path: 'crypto/:id/history', component: CryptoHistoryComponent },
+
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+

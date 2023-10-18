@@ -4,11 +4,12 @@ import { CryptoService } from 'src/app/services/crypto.service';
 import { CryptoData } from 'src/app/core/interfaces/interfaces';
 import { FormsModule } from '@angular/forms';
 import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,FormsModule,NumberFormatPipe ],
+  imports: [CommonModule,FormsModule,NumberFormatPipe, RouterLink ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

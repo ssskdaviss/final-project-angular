@@ -19,6 +19,16 @@
       "cardInfo": {},
       "crypto": null,
       "id": 2
+    },
+    {
+      "email": "gig.shaverdashvili@gmail.com",
+      "password": "12345678",
+      "nickname": "giga",
+      "phoneNumber": "+95567567567",
+      "balance": 0,
+      "cardInfo": {},
+      "crypto": null,
+      "id": 3
     }
   ]
 }
