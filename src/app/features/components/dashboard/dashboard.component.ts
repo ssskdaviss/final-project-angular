@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/services/crypto.service';
 import { CryptoData } from 'src/app/core/interfaces/interfaces';
 import { FormsModule } from '@angular/forms';
+import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,FormsModule, ],
+  imports: [CommonModule,FormsModule,NumberFormatPipe ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

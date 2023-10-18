@@ -27,12 +27,12 @@
           <td>{{ crypto.rank }}</td>
           <td>{{ crypto.name }}</td>
           <td>{{ crypto.symbol }}</td>
-          <td>{{ crypto.priceUsd }}</td>
-          <td>{{ crypto.marketCapUsd }}</td>
-          <td>{{ crypto.vwap24Hr }}</td>
-          <td>{{ crypto.supply }}</td>
-          <td>{{ crypto.volumeUsd24Hr }}</td>
-          <td>{{ crypto.changePercent24Hr }}</td>
+          <td>$ {{ crypto.priceUsd  | number: '2.0-1' }}</td>
+          <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
+          <td>$ {{ crypto.vwap24Hr| number: '2.0-1'}}</td>
+          <td>{{ crypto.supply | numberFormat }}</td>
+          <td>$ {{ crypto.volumeUsd24Hr | numberFormat}}</td>
+          <td>{{ crypto.changePercent24Hr | number:'1.2-2'}} %</td>
         </ng-container>
       </tr>
     </tbody>
