@@ -19,16 +19,6 @@
       "cardInfo": {},
       "crypto": null,
       "id": 2
-    },
-    {
-      "email": "aaa",
-      "password": "aaa",
-      "nickname": "",
-      "phoneNumber": "",
-      "balance": 0,
-      "cardInfo": {},
-      "crypto": null,
-      "id": 3
     }
   ]
 }

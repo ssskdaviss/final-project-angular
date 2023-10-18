@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from
 import { FormBuilder, Validators, FormControl, ValidationErrors, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/core/interfaces/interfaces';
 
 @Component({
   standalone: true,
@@ -19,8 +20,8 @@ export class RegisterFormComponent implements OnInit {
     nickname: ["",],
     phoneNumber: ["",],
     balance: 0,
-    cardInfo:{},
-    crypto:[],
+    cardInfo: {},
+    crypto: [],
   }, {
     validators: []
   });
@@ -37,12 +38,25 @@ export class RegisterFormComponent implements OnInit {
   public onSubmit(): void {
     if (this.signUpForm.valid) {
       const userData = this.signUpForm.value;
-      this.http.post('http://localhost:3000/users', userData).subscribe((response) => {
-        console.log('User data saved:', response);
-      });
-      this.signUpForm.reset();
+
+      this.http.get<User[]>('http://localhost:3000/users').subscribe(
+        (users: User[]) => {
+          const emailExists = users.some(user => user.email === userData.email);
+          if (emailExists) {
+            alert('Email already exists. Choose a different email');
+          } else {
+            this.http.post('http://localhost:3000/users', userData).subscribe((response) => {
+              console.log('User data saved:', response);
+            });
+            this.signUpForm.reset();
+            this.router.navigate(['/login']);
+          }
+        },
+        (error) => {
+          console.error('Registration failed:', error);
+        }
+      );
     }
-    this.router.navigate(['/login']);
   }
 
 
@@ -64,7 +78,6 @@ export class RegisterFormComponent implements OnInit {
     return null;
   }
 
- 
   public resetForm(): void {
     this.signUpForm.reset();
     this.editingIndex = null;

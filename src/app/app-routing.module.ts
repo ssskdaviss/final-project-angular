@@ -30,14 +30,7 @@ export const routes: Routes = [
       .then(m => m.DashboardComponent),
       canActivate: [AuthGuard]
    
-  },
-  {
-    path: 'logout',
-    loadComponent: () => import('./auth/components/logout/logout.component')
-      .then(m => m.LogoutComponent),
-      canActivate: [AuthGuard]
-   
-  },
+  }
 ];
 
 @NgModule({

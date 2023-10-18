@@ -15,10 +15,10 @@ import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
 
 })
 export class DashboardComponent {
-  cryptoData: CryptoData[] = [];
-  searchText: string = ''; 
-  currentPage: number = 1;
-  itemsPerPage: number = 10;
+  public cryptoData: CryptoData[] = [];
+  public searchText: string = ''; 
+  public currentPage: number = 1;
+  public itemsPerPage: number = 10;
 
   constructor(private cryptoService: CryptoService, private cd: ChangeDetectorRef) { }
 
@@ -26,25 +26,31 @@ export class DashboardComponent {
     this.fetchCryptoData();
   }
 
-  fetchCryptoData() {
-    this.cryptoService.fetchCryptoData().subscribe((response) => {
-      this.cryptoData = response.data;
-      this.cd.markForCheck(); 
-
-    });
+  public fetchCryptoData() {
+    this.cryptoService.fetchCryptoData().subscribe(
+      (response) => {
+        this.cryptoData = response.data;
+        this.cd.markForCheck();
+      },
+      (error) => {
+        console.error('Error in fetchCryptoData:', error);
+      }
+    );
   }
+  
   get paginatedCryptoData() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     return this.cryptoData.slice(startIndex, endIndex);
   }
-  previousPage() {
+
+  public previousPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
   }
 
-  nextPage() {
+  public nextPage() {
     const totalPages = Math.ceil(this.cryptoData.length / this.itemsPerPage);
     if (this.currentPage < totalPages) {
       this.currentPage++;

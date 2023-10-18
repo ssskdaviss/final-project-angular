@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { CryptoResponse } from '../core/interfaces/interfaces';
 
 @Injectable({
@@ -12,6 +12,11 @@ export class CryptoService {
 
   fetchCryptoData(): Observable<CryptoResponse> {
     const apiUrl = 'https://api.coincap.io/v2/assets';
-    return this.http.get<CryptoResponse>(apiUrl);
+    return this.http.get<CryptoResponse>(apiUrl).pipe(
+      catchError((error) => {
+        console.error('Error fetching crypto data:', error);
+        return throwError(() => new Error("error")); 
+      })
+    );
   }
 }
