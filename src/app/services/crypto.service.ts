@@ -20,6 +20,7 @@ export class CryptoService {
       })
     );
   }
+  
   fetchCryptoHistory(cryptoId: string, interval: string): Observable<CryptoHistoryResponse> {
     const apiUrl = `https://api.coincap.io/v2/assets/${cryptoId}/history?interval=${interval}`;
     return this.http.get<CryptoHistoryResponse>(apiUrl).pipe(

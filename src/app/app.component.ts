@@ -1,23 +1,16 @@
 import { Component } from '@angular/core';
-import {  Router, RouterLink, RouterOutlet } from '@angular/router';
-import { LoginComponent } from './auth/components/login/login.component';
-
+import {  RouterLink, RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 @Component({
   standalone: true,
-  imports: [RouterOutlet,RouterLink,],
+  imports: [RouterOutlet,RouterLink,NavbarComponent,],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  constructor(private router: Router) { }
+  constructor() { }
 
-  logout(): void {
-    const confirmLogout = window.confirm('Are you sure you want to Log Out?');
-
-  if (confirmLogout) {
-    localStorage.removeItem('email');
-    localStorage.removeItem('password');
-    this.router.navigate(['/login']);
-  }}
+  
 }

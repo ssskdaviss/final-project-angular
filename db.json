@@ -19,14 +19,42 @@
       "password": "",
       "nickname": "",
       "phoneNumber": "",
-      "balance": 200,
+      "balance": 1017,
       "cardInfo": {
-        "cardNumber": "sadas",
-        "expirationDate": "asdas",
-        "cvc": "asdas"
+        "cardNumber": "ewrwer",
+        "expirationDate": "",
+        "cvc": ""
       },
       "crypto": null,
       "id": 2
+    },
+    {
+      "email": "ad",
+      "password": "",
+      "nickname": "giga",
+      "phoneNumber": "",
+      "balance": 200,
+      "cardInfo": {
+        "cardNumber": "",
+        "expirationDate": "",
+        "cvc": ""
+      },
+      "crypto": null,
+      "id": 3
+    },
+    {
+      "email": "giga",
+      "password": "12345678",
+      "nickname": "Giga",
+      "phoneNumber": "",
+      "balance": 200,
+      "cardInfo": {
+        "cardNumber": "1234567890123456",
+        "expirationDate": "12/22",
+        "cvc": "123"
+      },
+      "crypto": null,
+      "id": 4
     }
   ]
 }

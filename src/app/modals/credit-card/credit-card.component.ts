@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
 import { FormControl } from '@angular/forms';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-credit-card',
@@ -18,24 +19,27 @@ export class CreditCardComponent {
   cardInfoForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.cardInfoForm = this.fb.group({
       cardNumber: ['',  /*[Validators.required, this.cardNumberValidator]*/],
       expirationDate: ['', /*[Validators.required, this.expirationDateValidator]*/],
       cvc: ['', /*[Validators.required, this.cvcValidator]*/],
     });
   }
+
   public onSubmit(): void {
     if (this.cardInfoForm.valid) {
       const cardInfoData = this.cardInfoForm.value;
       const userId = localStorage.getItem('userId');
 
-      this.http.patch<User>(`http://localhost:3000/users/${userId}`, { cardInfo: cardInfoData, balance: 200 })
+      this.http.patch<User>(`http://localhost:3000/users/${userId}`, { cardInfo: cardInfoData, balance:  500 + Math.floor(Math.random() * 1500) })
         .subscribe((user: User) => {
           console.log('Card info updated:', user);
           this.cardInfoForm.reset();
-        });
+          this.router.navigate(['/home']);
+        })
     }
+
   }
 
   public cardNumberValidator(control: FormControl) {

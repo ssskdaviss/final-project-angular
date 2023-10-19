@@ -31,16 +31,22 @@ export const routes: Routes = [
       .then(m => m.DashboardComponent),
       canActivate: [AuthGuard]
    
-  } , 
+  } ,  
   {
-    path: 'creditCard',
-    loadComponent: () => import('./features/components/credit-card/credit-card.component')
-      .then(m => m.CreditCardComponent),
+    path: 'userProfile',
+    loadComponent: () => import('./features/components/user-profile/user-profile.component')
+      .then(m => m.UserProfileComponent),
       canActivate: [AuthGuard]
    
-  } , 
+  } ,
+  {
+    path: 'buySell',
+    loadComponent: () => import('./features/components/buy-sell/buy-sell.component')
+      .then(m => m.BuySellComponent),
+      canActivate: [AuthGuard]
+   
+  } ,
   { path: 'crypto/:id/history', component: CryptoHistoryComponent,canActivate: [AuthGuard]},
-
 ];
 
 

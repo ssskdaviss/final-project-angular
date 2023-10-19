@@ -2,6 +2,9 @@ export interface User {
     id: string; 
     email: string;
     password: string;
+    balance: number
+    nickname: string
+    crypto: string[]
   }
 
   export interface CryptoData {
