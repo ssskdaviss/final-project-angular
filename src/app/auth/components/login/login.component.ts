@@ -43,6 +43,7 @@ export class LoginComponent {
 
           localStorage.setItem('email', authenticatedUser.email);
           localStorage.setItem('password', authenticatedUser.password);
+          localStorage.setItem('userId', authenticatedUser.id); 
 
           this.router.navigate(['/dashboard']);
         } else {

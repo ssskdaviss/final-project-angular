@@ -32,6 +32,13 @@ export const routes: Routes = [
       canActivate: [AuthGuard]
    
   } , 
+  {
+    path: 'creditCard',
+    loadComponent: () => import('./features/components/credit-card/credit-card.component')
+      .then(m => m.CreditCardComponent),
+      canActivate: [AuthGuard]
+   
+  } , 
   { path: 'crypto/:id/history', component: CryptoHistoryComponent,canActivate: [AuthGuard]},
 
 ];

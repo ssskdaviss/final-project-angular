@@ -20,7 +20,11 @@ export class RegisterFormComponent implements OnInit {
     nickname: ["",],
     phoneNumber: ["",],
     balance: 0,
-    cardInfo: {},
+    cardInfo: {
+      cardNumber: "",
+        expirationDate: "",
+        cvc: "",
+    },
     crypto: [],
   }, {
     validators: []
