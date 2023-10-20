@@ -1,6 +1,11 @@
-<!-- <div *ngIf="user">
-    <h1>User Profile</h1>
-    <p>Nickname: {{ user.nickname }}</p>
-    <p>Balance: {{ user.balance }} $</p>
-    <p>Crypto: {{ user.crypto.join(', ') }}</p>
-  </div> -->
+<div *ngIf="user">
+  <h1>User Profile</h1>
+  <p>Nickname: {{ user.nickname }}</p>
+  <p>Balance: {{ user.balance }} $</p>
+  <p>Crypto:</p>
+  <ul>
+    <li *ngFor="let crypto of user.crypto">
+      {{ crypto.id }}: {{ crypto.cryptoAmount | numberFormat }}
+    </li>
+  </ul>
+</div>

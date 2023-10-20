@@ -15,53 +15,11 @@
       "id": 1
     },
     {
-      "email": "aaa",
-      "password": "",
-      "nickname": "",
-      "phoneNumber": "",
-      "balance": 1017,
-      "cardInfo": {
-        "cardNumber": "ewrwer",
-        "expirationDate": "",
-        "cvc": ""
-      },
-      "crypto": [],
-      "id": 2
-    },
-    {
-      "email": "ad",
+      "email": "giga",
       "password": "",
       "nickname": "giga",
       "phoneNumber": "",
-      "balance": 200,
-      "cardInfo": {
-        "cardNumber": "",
-        "expirationDate": "",
-        "cvc": ""
-      },
-      "crypto": [],
-      "id": 3
-    },
-    {
-      "email": "giga",
-      "password": "12345678",
-      "nickname": "Giga",
-      "phoneNumber": "",
-      "balance": 200,
-      "cardInfo": {
-        "cardNumber": "1234567890123456",
-        "expirationDate": "12/22",
-        "cvc": "123"
-      },
-      "crypto": [],
-      "id": 4
-    },
-    {
-      "email": "123",
-      "password": "123",
-      "nickname": "235235235",
-      "phoneNumber": "5353523",
-      "balance": 1949.5,
+      "balance": 1479,
       "cardInfo": {
         "cardNumber": "",
         "expirationDate": "",
@@ -70,22 +28,49 @@
       "crypto": [
         {
           "id": "bitcoin",
-          "cryptoAmount": 351.45918666874525
+          "cryptoAmount": 0.03901746090883112
         },
         {
-          "id": "tron",
-          "cryptoAmount": 1109131.468463113
+          "id": "shiba-inu",
+          "cryptoAmount": 15777039.613528065
         },
         {
-          "id": "bitcoin-cash",
-          "cryptoAmount": 0.004390407117270321
+          "id": "stellar",
+          "cryptoAmount": 91.84579280603508
         },
         {
-          "id": "solana",
-          "cryptoAmount": 0.39948261545227687
+          "id": "litecoin",
+          "cryptoAmount": 0.1566928205460638
+        },
+        {
+          "id": "tether",
+          "cryptoAmount": 9.99355544677197
+        },
+        {
+          "id": "ethereum",
+          "cryptoAmount": 0.006165063802217861
         }
       ],
-      "id": 5
+      "id": 2
+    },
+    {
+      "email": "",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 623,
+      "cardInfo": {
+        "cardNumber": "",
+        "expirationDate": "",
+        "cvc": ""
+      },
+      "crypto": [
+        {
+          "id": "bitcoin",
+          "cryptoAmount": 0.0003341135569222541
+        }
+      ],
+      "id": 3
     }
   ]
 }

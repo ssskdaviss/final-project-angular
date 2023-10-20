@@ -28,10 +28,13 @@ import { User } from 'src/app/core/interfaces/interfaces';
 export class RegisterFormComponent implements OnInit {
   signUpForm = this.fb.group(
     {
-      email: [''],
-      password: [''],
-      nickname: [''],
-      phoneNumber: [''],
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [Validators.required, this.englishValidator, Validators.minLength(8)],
+      ],
+      nickname: ['', [Validators.required, this.englishValidator]],
+      phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
       balance: 0,
       cardInfo: {
         cardNumber: '',

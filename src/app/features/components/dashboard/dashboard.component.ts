@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/services/crypto.service';
 import { CryptoData } from 'src/app/core/interfaces/interfaces';
@@ -9,19 +13,21 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,FormsModule,NumberFormatPipe, RouterLink ],
+  imports: [CommonModule, FormsModule, NumberFormatPipe, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent {
   public cryptoData: CryptoData[] = [];
-  public searchText: string = ''; 
+  public searchText: string = '';
   public currentPage: number = 1;
   public itemsPerPage: number = 10;
 
-  constructor(private cryptoService: CryptoService, private cd: ChangeDetectorRef) { }
+  constructor(
+    private cryptoService: CryptoService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.fetchCryptoData();
@@ -38,7 +44,7 @@ export class DashboardComponent {
       }
     );
   }
-  
+
   get paginatedCryptoData() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;

@@ -1,9 +1,7 @@
-<button >X</button>
 <form [formGroup]="cardInfoForm" (ngSubmit)="onSubmit()">
- 
   <label for="cardNumber"
     >Card Number
-    <input type="text" formControlName="cardNumber" placeholder="16 Digits"/>
+    <input type="text" formControlName="cardNumber" placeholder="16 Digits" />
   </label>
   <div
     *ngIf="

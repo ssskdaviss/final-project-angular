@@ -9,7 +9,6 @@ import {
   CryptoData,
   cryptoInterface,
 } from 'src/app/core/interfaces/interfaces';
-import { FormsModule } from '@angular/forms';
 import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
 import { Router, RouterLink } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -20,8 +19,8 @@ import { BuyCryptoComponent } from 'src/app/modals/buy-crypto/buy-crypto.compone
   standalone: true,
   imports: [CommonModule, NumberFormatPipe, BuyCryptoComponent],
   templateUrl: './buy-sell.component.html',
-  template: ` <app-child [message]="parentMessage"></app-child> `,
   styleUrls: ['./buy-sell.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BuySellComponent {
   public cryptoData: CryptoData[] = [];
@@ -61,7 +60,7 @@ export class BuySellComponent {
       },
     });
 
-    this.dialogRef.afterClosed().subscribe((result) => {
+    this.dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
     });
   }

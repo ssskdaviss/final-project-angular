@@ -1,6 +1,12 @@
-import { Component, Inject, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  Input,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {
   FormBuilder,
   FormGroup,
@@ -13,6 +19,7 @@ import {
   StringToNumberPipe,
 } from '../../shared/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-buy-crypto',
   standalone: true,
@@ -25,6 +32,7 @@ import { HttpClient } from '@angular/common/http';
     FormsModule,
     StringToNumberPipe,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BuyCryptoComponent {
   userBalance!: number;
@@ -36,11 +44,13 @@ export class BuyCryptoComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public crypto: cryptoInterface,
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private cd: ChangeDetectorRef,
+    private dialogRef: MatDialogRef<BuyCryptoComponent> //close modal
   ) {
     this.buyForm = this.fb.group({
       usdAmount: [''],
-      usd: ['' /*aq validacia nubo*/],
+      usd: ['' /*aq validacia*/],
     });
     this.getBalance();
   }
@@ -53,6 +63,7 @@ export class BuyCryptoComponent {
         .subscribe((user: User) => {
           this.buyForm.reset();
           this.userBalance = user.balance;
+          this.cd.markForCheck();
         });
     }
   }
@@ -90,6 +101,8 @@ export class BuyCryptoComponent {
             .subscribe((user: User) => {
               console.log('Crypto updated:', user);
               this.buyForm.reset();
+              this.cd.markForCheck();
+              this.dialogRef.close();
             });
         });
     }
