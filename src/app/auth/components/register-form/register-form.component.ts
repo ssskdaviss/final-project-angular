@@ -16,10 +16,11 @@ import {
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule],
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.scss'],

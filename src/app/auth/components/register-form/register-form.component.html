@@ -1,8 +1,17 @@
 <body>
   <form class="register" [formGroup]="signUpForm">
+    <i class="fa-solid fa-address-card"></i>
     <label>
       E-mail
       <input type="email" formControlName="email" />
+      <div
+        *ngIf="
+          signUpForm.get('email')?.hasError('email') &&
+          signUpForm.get('email')?.touched
+        "
+      >
+        Invalid email format.
+      </div>
     </label>
     <label>
       Password:
@@ -11,14 +20,47 @@
         formControlName="password"
         placeholder="min 8 Character(ENG)"
       />
+      <div
+        *ngIf="
+          signUpForm.get('password')?.hasError('minlength') &&
+          signUpForm.get('password')?.touched
+        "
+      >
+        Password must be at least 8 characters long.
+      </div>
+      <div
+        *ngIf="
+          signUpForm.get('password')?.hasError('englishValidator') &&
+          signUpForm.get('password')?.touched
+        "
+      >
+        Password must contain only English letters and numbers.
+      </div>
     </label>
     <label>
       Nickname:
       <input type="text" formControlName="nickname" />
+      <div
+        *ngIf="
+          signUpForm.get('nickname')?.hasError('englishValidator') &&
+          signUpForm.get('nickname')?.touched
+        "
+      >
+        Nickname must contain only English letters and numbers.
+      </div>
     </label>
     <label>
       Phone Number:
       <input type="text" formControlName="phoneNumber" placeholder="(+995)" />
+      <div
+        *ngIf="
+          signUpForm.get('phoneNumber')?.hasError('phoneNumberFormat') &&
+          signUpForm.get('phoneNumber')?.touched
+        "
+      >
+        Invalid phone number format. It should start with '+995' followed by 9
+        digits.
+      </div>
     </label>
     <input
       type="submit"

@@ -50,7 +50,7 @@ export class BuyCryptoComponent {
   ) {
     this.buyForm = this.fb.group({
       usdAmount: [''],
-      usd: ['' /*aq validacia*/],
+      usd: [''],
     });
     this.getBalance();
   }

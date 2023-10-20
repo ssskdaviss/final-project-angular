@@ -15,8 +15,8 @@ import { User } from 'src/app/core/interfaces/interfaces';
 })
 export class LoginComponent {
   loginForm = this.fb.group({
-    email: [''],
-    password: [''],
+    email: ['',[Validators.required]],
+    password: ['',[Validators.required]],
   });
 
   constructor(

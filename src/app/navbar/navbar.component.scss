@@ -1,0 +1,46 @@
+nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
+background-color: black;
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+      div {
+        a {
+          text-decoration: none;
+          color: white;
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    .logout, .credit-card {
+      margin-right: 20px;
+
+      button {
+        background: none;
+        border: none;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -31,11 +31,10 @@ export class CreditCardComponent {
     private dialogRef: MatDialogRef<CreditCardComponent> //close modal
   ) {
     this.cardInfoForm = this.fb.group({
-      cardNumber: ['' /*[Validators.required, this.cardNumberValidator]*/],
-      expirationDate: [
-        '' /*[Validators.required, this.expirationDateValidator]*/,
+      cardNumber: ['' ,[Validators.required, this.cardNumberValidator]],
+      expirationDate: ['' ,[Validators.required, this.expirationDateValidator],
       ],
-      cvc: ['' /*[Validators.required, this.cvcValidator]*/],
+      cvc: ['' ,[Validators.required, this.cvcValidator]],
     });
   }
 

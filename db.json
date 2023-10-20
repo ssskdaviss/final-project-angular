@@ -58,16 +58,20 @@
       "password": "",
       "nickname": "",
       "phoneNumber": "",
-      "balance": 623,
+      "balance": 1947,
       "cardInfo": {
-        "cardNumber": "",
-        "expirationDate": "",
-        "cvc": ""
+        "cardNumber": "1234567890123456",
+        "expirationDate": "12/23",
+        "cvc": "123"
       },
       "crypto": [
         {
           "id": "bitcoin",
           "cryptoAmount": 0.0003341135569222541
+        },
+        {
+          "id": "tether",
+          "cryptoAmount": 9.997693905580169
         }
       ],
       "id": 3
