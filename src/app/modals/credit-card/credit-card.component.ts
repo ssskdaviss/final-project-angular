@@ -18,7 +18,6 @@ import { Router } from '@angular/router';
 export class CreditCardComponent {
   cardInfoForm: FormGroup;
 
-
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.cardInfoForm = this.fb.group({
       cardNumber: ['',  /*[Validators.required, this.cardNumberValidator]*/],

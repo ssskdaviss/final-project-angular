@@ -1,5 +1,18 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, Validators, FormControl, ValidationErrors, AbstractControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import {
+  FormBuilder,
+  Validators,
+  FormControl,
+  ValidationErrors,
+  AbstractControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
@@ -10,34 +23,37 @@ import { User } from 'src/app/core/interfaces/interfaces';
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterFormComponent implements OnInit {
-  signUpForm = this.fb.group({
-    email: ["",],
-    password: ["",],
-    nickname: ["",],
-    phoneNumber: ["",],
-    balance: 0,
-    cardInfo: {
-      cardNumber: "",
-        expirationDate: "",
-        cvc: "",
+  signUpForm = this.fb.group(
+    {
+      email: [''],
+      password: [''],
+      nickname: [''],
+      phoneNumber: [''],
+      balance: 0,
+      cardInfo: {
+        cardNumber: '',
+        expirationDate: '',
+        cvc: '',
+      },
+      crypto: [[]],
     },
-    crypto: [],
-  }, {
-    validators: []
-  });
+    {
+      validators: [],
+    }
+  );
 
-  constructor(public fb: FormBuilder, public router: Router, private http: HttpClient
-  ) { }
+  constructor(
+    public fb: FormBuilder,
+    public router: Router,
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public editingIndex: number | null = null;
-
 
   public onSubmit(): void {
     if (this.signUpForm.valid) {
@@ -45,13 +61,17 @@ export class RegisterFormComponent implements OnInit {
 
       this.http.get<User[]>('http://localhost:3000/users').subscribe(
         (users: User[]) => {
-          const emailExists = users.some(user => user.email === userData.email);
+          const emailExists = users.some(
+            (user) => user.email === userData.email
+          );
           if (emailExists) {
             alert('Email already exists. Choose a different email');
           } else {
-            this.http.post('http://localhost:3000/users', userData).subscribe((response) => {
-              console.log('User data saved:', response);
-            });
+            this.http
+              .post('http://localhost:3000/users', userData)
+              .subscribe((response) => {
+                console.log('User data saved:', response);
+              });
             this.signUpForm.reset();
             this.router.navigate(['/login']);
           }
@@ -62,7 +82,6 @@ export class RegisterFormComponent implements OnInit {
       );
     }
   }
-
 
   public englishValidator(control: FormControl): ValidationErrors | null {
     const pattern = /^[a-zA-Z0-9]*$/;
@@ -86,5 +105,4 @@ export class RegisterFormComponent implements OnInit {
     this.signUpForm.reset();
     this.editingIndex = null;
   }
-
 }

@@ -1,0 +1,21 @@
+<button>X</button>
+<form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+  <p>{{ crypto.id }}</p>
+  <label for="usd">USD </label>
+  <input
+    [(ngModel)]="usdAmount"
+    name="usdAmount"
+    [ngModelOptions]="{ standalone: true }"
+    type="number"
+    min="10"
+    max="5000"
+  />
+  <p>Balance: ${{ userBalance }}</p>
+  <p>Price: ${{ crypto.priceUsd | numberFormat }}</p>
+  <label for="cryptoAmount"
+    >Amount:
+    {{ (usdAmount | strToNum) / crypto.priceUsd | numberFormat }}</label
+  >
+  <br />
+  <button type="submit">Buy</button>
+</form>

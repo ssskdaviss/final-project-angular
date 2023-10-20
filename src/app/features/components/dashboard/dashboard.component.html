@@ -23,12 +23,12 @@
           <td>{{ crypto.rank }}</td>
           <td>{{ crypto.name }}</td>
           <td>{{ crypto.symbol }}</td>
-          <td>$ {{ crypto.priceUsd | number : "2.0-1" }}</td>
+          <td>$ {{ crypto.priceUsd | numberFormat }}</td>
           <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
-          <td>$ {{ crypto.vwap24Hr | number : "2.0-1" }}</td>
+          <td>$ {{ crypto.vwap24Hr | numberFormat }}</td>
           <td>{{ crypto.supply | numberFormat }}</td>
           <td>$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
-          <td>{{ crypto.changePercent24Hr | number : "1.2-2" }} %</td>
+          <td>{{ crypto.changePercent24Hr | numberFormat }} %</td>
           <td>
             <a [routerLink]="['/crypto', crypto.id, 'history']">View History</a>
           </td>

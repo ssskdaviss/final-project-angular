@@ -25,7 +25,7 @@
         "expirationDate": "",
         "cvc": ""
       },
-      "crypto": null,
+      "crypto": [],
       "id": 2
     },
     {
@@ -39,7 +39,7 @@
         "expirationDate": "",
         "cvc": ""
       },
-      "crypto": null,
+      "crypto": [],
       "id": 3
     },
     {
@@ -53,8 +53,39 @@
         "expirationDate": "12/22",
         "cvc": "123"
       },
-      "crypto": null,
+      "crypto": [],
       "id": 4
+    },
+    {
+      "email": "123",
+      "password": "123",
+      "nickname": "235235235",
+      "phoneNumber": "5353523",
+      "balance": 1949.5,
+      "cardInfo": {
+        "cardNumber": "",
+        "expirationDate": "",
+        "cvc": ""
+      },
+      "crypto": [
+        {
+          "id": "bitcoin",
+          "cryptoAmount": 351.45918666874525
+        },
+        {
+          "id": "tron",
+          "cryptoAmount": 1109131.468463113
+        },
+        {
+          "id": "bitcoin-cash",
+          "cryptoAmount": 0.004390407117270321
+        },
+        {
+          "id": "solana",
+          "cryptoAmount": 0.39948261545227687
+        }
+      ],
+      "id": 5
     }
   ]
 }
