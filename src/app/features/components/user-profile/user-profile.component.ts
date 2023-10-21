@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private changeDetectorRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');

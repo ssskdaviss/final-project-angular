@@ -46,6 +46,19 @@ export const routes: Routes = [
       canActivate: [AuthGuard]
    
   } ,
+  {
+    path: 'wallet',
+    loadComponent: () => import('./features/components/wallet/wallet.component')
+      .then(m => m.WalletComponent),
+      canActivate: [AuthGuard]
+   
+  } , {
+    path: 'history',
+    loadComponent: () => import('./features/components/history/history.component')
+      .then(m => m.HistoryComponent),
+      canActivate: [AuthGuard]
+   
+  } ,
   { path: 'crypto/:id/history', component: CryptoHistoryComponent,canActivate: [AuthGuard]},
 ];
 

@@ -8,6 +8,12 @@ export interface User {
     id: string;
     cryptoAmount: number;
   }[];
+  history: {
+    id: string,
+    type: string,
+    amount: number,
+    priceUsd: number;
+  }[]
 }
 
 export interface CryptoData {

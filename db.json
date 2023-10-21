@@ -1,80 +1,75 @@
 {
   "users": [
     {
-      "email": "john.doe@gmail.com",
-      "password": "john1234",
-      "nickname": "john",
-      "phoneNumber": "+995567567567",
-      "balance": 0,
-      "cardInfo": {
-        "cardNumber": "",
-        "expirationDate": "",
-        "cvc": ""
-      },
-      "crypto": [],
-      "id": 1
-    },
-    {
-      "email": "giga",
-      "password": "",
+      "email": "giga@mail.com",
+      "password": "paroli123",
       "nickname": "giga",
-      "phoneNumber": "",
-      "balance": 1479,
+      "phoneNumber": "+995555555555",
+      "balance": 1081.361595219363,
       "cardInfo": {
-        "cardNumber": "",
-        "expirationDate": "",
-        "cvc": ""
+        "cardNumber": "3232323232323232",
+        "expirationDate": "12/26",
+        "cvc": "111"
       },
       "crypto": [
         {
-          "id": "bitcoin",
-          "cryptoAmount": 0.03901746090883112
+          "id": "xrp",
+          "cryptoAmount": 144.2110305515622
+        },
+        {
+          "id": "tron",
+          "cryptoAmount": 2000.8026701520648
         },
         {
           "id": "shiba-inu",
-          "cryptoAmount": 15777039.613528065
-        },
-        {
-          "id": "stellar",
-          "cryptoAmount": 91.84579280603508
-        },
-        {
-          "id": "litecoin",
-          "cryptoAmount": 0.1566928205460638
-        },
-        {
-          "id": "tether",
-          "cryptoAmount": 9.99355544677197
-        },
-        {
-          "id": "ethereum",
-          "cryptoAmount": 0.006165063802217861
+          "cryptoAmount": 19855809.6434866
         }
       ],
-      "id": 2
-    },
-    {
-      "email": "",
-      "password": "",
-      "nickname": "",
-      "phoneNumber": "",
-      "balance": 1947,
-      "cardInfo": {
-        "cardNumber": "1234567890123456",
-        "expirationDate": "12/23",
-        "cvc": "123"
-      },
-      "crypto": [
+      "history": [
         {
-          "id": "bitcoin",
-          "cryptoAmount": 0.0003341135569222541
+          "id": "xrp",
+          "type": "sell",
+          "amount": 50,
+          "priceUsd": 25.710911136671854
         },
         {
-          "id": "tether",
-          "cryptoAmount": 9.997693905580169
+          "id": "tron",
+          "type": "sell",
+          "amount": 200,
+          "priceUsd": 18.17770974379176
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 1000000,
+          "priceUsd": 6.9229777521
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 100000,
+          "priceUsd": 0.69229777521
+        },
+        {
+          "id": "shiba-inu",
+          "type": "buy",
+          "amount": 20955809.6434866,
+          "priceUsd": 145
+        },
+        {
+          "id": "tron",
+          "type": "buy",
+          "amount": 2200.802670152065,
+          "priceUsd": 200
+        },
+        {
+          "id": "xrp",
+          "type": "buy",
+          "amount": 194.2110305515622,
+          "priceUsd": 100
         }
       ],
-      "id": 3
+      "id": 1
     }
   ]
 }

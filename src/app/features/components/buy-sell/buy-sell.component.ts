@@ -29,9 +29,7 @@ export class BuySellComponent {
   constructor(
     private cryptoService: CryptoService,
     private cd: ChangeDetectorRef,
-    public dialog: MatDialog,
-    private router: Router
-  ) {}
+    public dialog: MatDialog  ) {}
 
   ngOnInit(): void {
     this.fetchCryptoData();
@@ -65,7 +63,4 @@ export class BuySellComponent {
     });
   }
 
-  closeBuyModal(): void {
-    this.dialogRef.close();
-  }
 }

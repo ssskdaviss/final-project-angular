@@ -43,6 +43,7 @@ export class RegisterFormComponent implements OnInit {
         cvc: '',
       },
       crypto: [[]],
+      history:[[]]
     },
     {
       validators: [],

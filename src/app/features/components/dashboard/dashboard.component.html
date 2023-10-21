@@ -1,56 +1,56 @@
 <body>
-
-<div class="dashboard">
-  <h1><i class="fa-brands fa-bitcoin"></i> Crypto Dashboard <i class="fa-brands fa-bitcoin"></i></h1>
-  <input type="text" [(ngModel)]="searchText" placeholder="Search Crypto" />
-  <table class="crypto-table">
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Symbol</th>
-        <th>Price (USD)</th>
-        <th>Market Cap (USD)</th>
-        <th>VWAP (24Hr)</th>
-        <th>Supply</th>
-        <th>Volume(24Hr)</th>
-        <th>Change(24Hr)</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let crypto of paginatedCryptoData">
-        <ng-container
-          *ngIf="crypto.name.toLowerCase().includes(searchText.toLowerCase())"
-        >
-          <td>{{ crypto.rank }}</td>
-          <td>{{ crypto.name }}</td>
-          <td>{{ crypto.symbol }}</td>
-          <td>$ {{ crypto.priceUsd | numberFormat }}</td>
-          <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
-          <td>$ {{ crypto.vwap24Hr | numberFormat }}</td>
-          <td>{{ crypto.supply | numberFormat }}</td>
-          <td>$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
-          <td [style.color]="crypto.changePercent24Hr >= 0 ? '#078807' : '#900000'">
-            {{ crypto.changePercent24Hr | numberFormat }} %</td>
-          <td>  
-            <a [routerLink]="['/crypto', crypto.id, 'history']"><i class="fa-solid fa-chart-line"></i></a>
-          </td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
-  <div class="pagination-controls">
-    <button (click)="previousPage()" [disabled]="currentPage === 1">
-      Previous
-    </button>
-    <span>Page {{ currentPage }}</span>
-    <button
-      (click)="nextPage()"
-      [disabled]="currentPage * itemsPerPage >= cryptoData.length"
-    >
-      Next
-    </button>
+  <div class="dashboard">
+    <h1>Crypto Dashboard <i class="fa-brands fa-bitcoin"></i></h1>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search Crypto" />
+    <table class="crypto-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>Price (USD)</th>
+          <th>Market Cap (USD)</th>
+          <th>VWAP (24Hr)</th>
+          <th>Supply</th>
+          <th>Volume(24Hr)</th>
+          <th>Change(24Hr)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crypto of paginatedCryptoData">
+          <ng-container *ngIf="crypto.name.toLowerCase().includes(searchText.toLowerCase())">
+            <td>{{ crypto.rank }}</td>
+            <td>{{ crypto.name }}</td>
+            <td>{{ crypto.symbol }}</td>
+            <td>$ {{ crypto.priceUsd | numberFormat }}</td>
+            <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
+            <td>$ {{ crypto.vwap24Hr | numberFormat }}</td>
+            <td>{{ crypto.supply | numberFormat }}</td>
+            <td>$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
+            <td [style.color]="
+                crypto.changePercent24Hr >= 0 ? '#078807' : '#900000'
+              ">
+              <span *ngIf="crypto.changePercent24Hr > 0"><i class="fa-solid fa-arrow-up"></i></span>
+              <span *ngIf="crypto.changePercent24Hr < 0"><i class="fa-solid fa-arrow-down"></i></span>
+              <span *ngIf="crypto.changePercent24Hr === 0">|</span>
+              {{ crypto.changePercent24Hr | numberFormat }} %
+            </td>
+            <td>
+              <a [routerLink]="['/crypto', crypto.id, 'history']"><i class="fa-solid fa-chart-line"></i></a>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">
+        Previous
+      </button>
+      <span>Page {{ currentPage }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= cryptoData.length">
+        Next
+      </button>
+    </div>
   </div>
-</div>
 </body>

@@ -1,4 +1,5 @@
 <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+  <button (click)="closeBuyModal()">X</button>
   <p>{{ crypto.id }}</p>
   <label for="usd">USD </label>
   <input
@@ -9,7 +10,7 @@
     min="10"
     max="5000"
   />
-  <p>Balance: ${{ userBalance }}</p>
+  <p>Balance: ${{ userBalance | numberFormat }}</p>
   <p>Price: ${{ crypto.priceUsd | numberFormat }}</p>
   <label for="cryptoAmount"
     >Amount:

@@ -1,0 +1,22 @@
+<div class="dashboard">
+    <h1>Sell Crypto</h1>
+    <div *ngIf="user">
+      <table class="crypto-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Available</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of user.crypto">
+            <td>{{ i.id }}</td>
+            <td>{{ i.cryptoAmount | numberFormat }}</td>
+            <button (click)="openSellModal(i)">Sell</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

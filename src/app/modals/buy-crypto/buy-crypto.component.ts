@@ -93,10 +93,20 @@ export class BuyCryptoComponent {
             ].cryptoAmount += Number(this.usdAmount) / this.crypto.priceUsd;
           }
 
+          let history = user.history;
+
+          history.unshift({
+            id: this.crypto.id,
+            type: 'buy',
+            amount: Number(this.usdAmount) / this.crypto.priceUsd,
+            priceUsd: Number(this.usdAmount),
+          });
+
           this.http
             .patch<User>(`http://localhost:3000/users/${userId}`, {
               crypto: cryptoArr,
               balance: user.balance - Number(this.usdAmount),
+              history: history,
             })
             .subscribe((user: User) => {
               console.log('Crypto updated:', user);
@@ -106,5 +116,8 @@ export class BuyCryptoComponent {
             });
         });
     }
+  }
+  closeBuyModal(): void {
+    this.dialogRef.close();
   }
 }

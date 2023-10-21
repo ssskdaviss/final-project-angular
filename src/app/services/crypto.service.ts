@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-import { CryptoResponse } from '../core/interfaces/interfaces';
+import { CryptoData, CryptoResponse } from '../core/interfaces/interfaces';
 import { CryptoHistoryResponse } from '../core/interfaces/interfaces';
 
 @Injectable({
@@ -19,6 +19,7 @@ export class CryptoService {
       })
     );
   }
+
 
   fetchCryptoHistory(
     cryptoId: string,

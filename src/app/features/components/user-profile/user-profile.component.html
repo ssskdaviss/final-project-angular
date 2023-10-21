@@ -2,7 +2,7 @@
   <h1>User Profile</h1>
   <i class="fa-regular fa-user"></i>
   <p>Nickname: {{ user.nickname }}</p>
-  <p>Balance: {{ user.balance }} $</p>
+  <p>Balance: {{ user.balance | numberFormat}} $</p>
   <p>Crypto:</p>
   <ul>
     <li *ngFor="let crypto of user.crypto">
