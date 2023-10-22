@@ -3,53 +3,59 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #141414;
 
   .login-form {
-    background-color: #121212;
+    background-color: #0c0c0c;
     color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-    form {
-      label {
-        display: block;
-        margin-bottom: 10px;
-
-        input[type="email"],
-        input[type="password"] {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #666;
-          border-radius: 5px;
-          background-color: #333;
-          color: #fff;
-
-          &:focus {
-            outline: none;
-            border-color: #4caf50;
-          }
-        }
+    border: #4caf50 solid 2px;
+    transform: translate(0, -200px);
+    div{
+      text-align: center;
+      h2{
+        color: #4caf50;
       }
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
 
-      button {
-        background-color: #4caf50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #666;
         border-radius: 5px;
-        cursor: pointer;
+        background-color: #333;
+        color: #fff;
 
-        &:disabled {
-          background-color: #777;
-          cursor: not-allowed;
+        &:focus {
+          outline: none;
+          border-color: #4caf50;
         }
       }
     }
 
-    i.fa-solid.fa-right-to-bracket {
-      font-size: 24px;
-      color: #4caf50;
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: #777;
+        cursor: not-allowed;
+      }
     }
+  }
+
+  i.fa-solid.fa-right-to-bracket {
+    font-size: 24px;
+    color: #4caf50;
   }
 }

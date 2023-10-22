@@ -48,3 +48,4 @@ export interface cryptoInterface {
   priceUsd: number;
   symbol: string;
 }
+

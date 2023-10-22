@@ -1,22 +1,25 @@
-<div class="dashboard">
+<body>
+  <div class="dashboard">
     <h1>Sell Crypto</h1>
     <div *ngIf="user">
       <table class="crypto-table">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Available</th>
+            <th>Amount</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of user.crypto">
-            <td>{{ i.id }}</td>
-            <td>{{ i.cryptoAmount | numberFormat }}</td>
-            <button (click)="openSellModal(i)">Sell</button>
+          <tr *ngFor="let crypto of user.crypto">
+            <td>{{ crypto.id }}</td>
+            <td>{{ crypto.cryptoAmount | numberFormat }}</td>
+            <td>
+              <button (click)="openSellModal(crypto)">Sell</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  
+</body>

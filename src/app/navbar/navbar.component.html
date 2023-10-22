@@ -1,67 +1,74 @@
 <nav>
+  <div class="home">
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <img src="../../assets/images/logo.svg" alt="">
+
+    </a>
+  </div>
   <ul>
     <li>
-      <div class="register">
-        <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <i class="fa-regular fa-address-card"> Register</i>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="login">
-        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <i class="fa-solid fa-right-to-bracket">Login</i>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="home">
-        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
-          <i class="fa-solid fa-house"> Home</i>
-        </a>
-      </div>
-    </li>
-    <li>
       <div class="dashboard">
-        <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page"><i
-            class="fa-solid fa-chess-board"> Dashboard</i></a>
+        <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Dashboard   </a>
       </div>
     </li>
 
     <li>
       <div class="profile">
-        <a routerLink="/userProfile" routerLinkActive="active" ariaCurrentWhenActive="page"><i
-            class="fa-regular fa-user"> Profile</i>
+        <a routerLink="/userProfile" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Profile
         </a>
       </div>
     </li>
     <li>
       <div class="buy">
-        <a routerLink="/buySell" routerLinkActive="active" ariaCurrentWhenActive="page"><i
-            class="fa-solid fa-cart-shopping"> Buy</i></a>
+        <a routerLink="/buySell" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Buy</a>
       </div>
     </li>
     <li>
       <div class="wallet">
-        <a routerLink="/wallet" routerLinkActive="active" ariaCurrentWhenActive="page"> Wallet</a>
+        <a routerLink="/wallet" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Wallet</a>
       </div>
     </li>
     <li>
       <div class="history">
-        <a routerLink="/history" routerLinkActive="active" ariaCurrentWhenActive="page"> History</a>
+        <a routerLink="/history" routerLinkActive="active" ariaCurrentWhenActive="page"> History
+        </a>
       </div>
     </li>
   </ul>
-  <div class="right">
-    <div class="logout">
-      <button (click)="logout()">
-        <i class="fa-solid fa-right-from-bracket"> Log Out</i>
-      </button>
-    </div>
-    <div class="credit-card">
-      <button (click)="openCardModal()">
-        <i class="fa-regular fa-credit-card"> Credit Card</i>
-      </button>
-    </div>
-  </div>
+  <div class="right right-button-container">
+  <ul>
+    <li *ngIf="!(cryptoservices.isLoggedIn$ | async)">
+      <div class="register">
+        <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Register
+        </a>
+      </div>
+    </li>
+    <li *ngIf="!(cryptoservices.isLoggedIn$ | async)">
+      <div class="login">
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+          Login
+        </a>
+      </div>
+    </li>
+    <li *ngIf="(cryptoservices.isLoggedIn$ | async)">
+      <div class="logout">
+        <button (click)="logout()">
+          Log Out
+        </button>
+      </div>
+    </li>
+    <li *ngIf="(cryptoservices.isLoggedIn$ | async)">
+      <div class="credit-card">
+        <button (click)="openCardModal()">
+          Credit Card
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
 </nav>

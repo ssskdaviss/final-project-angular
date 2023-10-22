@@ -1,7 +1,10 @@
 <body>
   <div class="login-form">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <i class="fa-solid fa-right-to-bracket"></i>
+      <div>
+        <h2>Login</h2>
+        <i class="fa-solid fa-right-to-bracket"></i>
+      </div>
       <label>
         E-mail
         <input type="email" formControlName="email" />

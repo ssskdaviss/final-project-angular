@@ -1,1 +1,26 @@
-<p>history works!</p>
+<body>
+
+  <div>
+    <h1><i class="fa-solid fa-money-bills"></i> User Transaction History</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Crypto ID</th>
+          <th>Amount</th>
+          <th>Price (USD)</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of user?.history">
+          <td>{{ transaction.id }}</td>
+          <td>{{ transaction.amount | numberFormat }}</td>
+          <td>{{ transaction.priceUsd | numberFormat }}</td>
+          <td>{{ transaction.type }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { CreditCardComponent } from '../modals/credit-card/credit-card.component';
 import { Router } from '@angular/router';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { CryptoService } from '../services/crypto.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -29,7 +30,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  constructor(public dialog: MatDialog, private router: Router) {}
+  constructor(public dialog: MatDialog, private router: Router,public cryptoservices: CryptoService
+    ) {}
   dialogRef!: MatDialogRef<CreditCardComponent>;
   openCardModal(): void {
     this.dialogRef = this.dialog.open(CreditCardComponent, {});
@@ -51,6 +53,8 @@ export class NavbarComponent {
       localStorage.removeItem('password');
       localStorage.removeItem('userId');
       this.router.navigate(['/login']);
+      location.reload(); 
+
     }
   }
 }

@@ -4,7 +4,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/interfaces';
-
+import { CryptoService } from 'src/app/services/crypto.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -22,8 +22,10 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private cryptoservices: CryptoService
   ) {}
+
 
   ngOnInit(): void {}
 
@@ -43,6 +45,8 @@ export class LoginComponent {
             localStorage.setItem('email', authenticatedUser.email);
             localStorage.setItem('password', authenticatedUser.password);
             localStorage.setItem('userId', authenticatedUser.id);
+            this.cryptoservices.setLoggedIn(true);
+
             this.router.navigate(['/dashboard']);
           } else {
             alert('Login failed: Invalid credentials');

@@ -1,21 +1,24 @@
-<div class="dashboard">
-  <h1>Buy Crypto</h1>
-  <table class="crypto-table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Price (USD)</th>
-        <th>Change(24Hr)</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let crypto of cryptoData">
-        <td>{{ crypto.name }}</td>
-        <td>$ {{ crypto.priceUsd | numberFormat }}</td>
-        <td>{{ crypto.changePercent24Hr | numberFormat }} %</td>
-        <button (click)="openBuyModal(crypto)">buy</button>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<body>
+  <div class="dashboard">
+    <h1>Buy Crypto <i class="fa-solid fa-cart-shopping"></i></h1>
+    <table class="crypto-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price (USD)</th>
+          <th>Change (24Hr)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let crypto of cryptoData">
+          <td class="name">{{ crypto.name }}</td>
+          <td>$ {{ crypto.priceUsd | numberFormat }}</td>
+          <td class="change" [ngClass]="getChangeTextClass(crypto.changePercent24Hr)">
+            {{ crypto.changePercent24Hr | numberFormat }} %</td>
+          <td><button (click)="openBuyModal(crypto)">Buy</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

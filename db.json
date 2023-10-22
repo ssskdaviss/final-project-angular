@@ -5,7 +5,7 @@
       "password": "paroli123",
       "nickname": "giga",
       "phoneNumber": "+995555555555",
-      "balance": 1081.361595219363,
+      "balance": 1386.5937485407558,
       "cardInfo": {
         "cardNumber": "3232323232323232",
         "expirationDate": "12/26",
@@ -14,18 +14,72 @@
       "crypto": [
         {
           "id": "xrp",
-          "cryptoAmount": 144.2110305515622
+          "cryptoAmount": 117.2110305515622
         },
         {
           "id": "tron",
-          "cryptoAmount": 2000.8026701520648
+          "cryptoAmount": 0.0026701520648202415
         },
         {
           "id": "shiba-inu",
-          "cryptoAmount": 19855809.6434866
+          "cryptoAmount": 4715801.6434866
         }
       ],
       "history": [
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 10000000,
+          "priceUsd": 71.668671235
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 140000,
+          "priceUsd": 1.00336139729
+        },
+        {
+          "id": "tron",
+          "type": "sell",
+          "amount": 0.8,
+          "priceUsd": 0.07331585601785393
+        },
+        {
+          "id": "tron",
+          "type": "sell",
+          "amount": 0,
+          "priceUsd": 0
+        },
+        {
+          "id": "tron",
+          "type": "sell",
+          "amount": 2000,
+          "priceUsd": 183.2891877149138
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 5000000,
+          "priceUsd": 35.228317124
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 5.170579154823444
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 8,
+          "priceUsd": 0.0000558917686904
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 17,
+          "priceUsd": 8.798664947579141
+        },
         {
           "id": "xrp",
           "type": "sell",

@@ -1,71 +1,90 @@
 .dashboard {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    h1 {
-      font-size: 24px;
-      margin: 0;
-      padding: 10px 0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #1c1c1c;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #00a049;
+  }
+
+  .crypto-table {
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #141414;
+
+    .name{
+      color: white;
+      font-weight: bold;
+    }
+    thead {
+      background-color: #000000;
+      color: #fff;
+      
+    }
+
+    th {
+      padding: 10px;
+      text-align: left;
+      font-size: 18px;
+      color: #00a049;
+      border-radius: 20px;
       text-align: center;
     }
-  
-    .crypto-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-  
-      thead {
-        background-color: #333;
-        color: #fff;
-      }
-  
-      th {
-        padding: 10px;
-        text-align: left;
-      }
-  
-      tbody {
-        tr {
+
+    tbody {
+      tr {
+        transition: background-color 0.3s;
+        text-align: center;
+
+        &:hover {
+          background-color: #2e2e2e;
+        }
+
+        td {
+          padding: 10px;
+
+          &:first-child {
+            font-weight: bold;
+          }
+
+          &:nth-child(2) {
+            font-weight: bold;
+            color: #00a049;
+          }
+
+          &:nth-child(3) {
+            font-weight: bold;
+          }
+        }
+        .red-text {
+          color: red;
+        }
+        
+        .green-text {
+          color: green;
+        }
+
+        button {
+          background-color: #00a049;
+          color: #000000;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
           transition: background-color 0.3s;
-  
-          &:hover {
-            background-color: #e0e0e0;
-          }
-  
-          td {
-            padding: 10px;
-  
-            &:first-child {
-              font-weight: bold;
-            }
-  
-            &:nth-child(2) {
-              font-weight: bold;
-              color: #00a049;
-            }
-  
-            &:nth-child(3) {
-              font-weight: bold;
-              color: #ff5500;
-            }
-          }
-  
-          button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-  
-            &:hover {
-              background-color: #0056b3;
-            }
-          }
+          font-weight: bold;
         }
       }
     }
+  }
 }

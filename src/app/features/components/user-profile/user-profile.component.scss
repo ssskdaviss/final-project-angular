@@ -1,33 +1,37 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-  }
-  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  background-color: #141414;
   div {
     text-align: center;
-    background-color: #fff;
+    background-color: #0c0c0c;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -200px);
   }
   
   h1 {
-    font-size: 24px;
+    font-size: 30px;
+    color: #4caf50;
+  
   }
   
   i {
     font-size: 36px;
-    color: #3498db;
+    color: #4caf50;
   }
   
   p {
-    font-size: 18px;
+    font-size: 25px;
     margin: 8px 0;
+    padding: 5px;
+    color: white;
   }
   
   ul {
@@ -36,6 +40,18 @@ body {
   }
   
   li {
-    font-size: 16px;
+    font-size: 20px;
     margin: 4px 0;
+    padding: 5px;
+    color: #ffffff;
+    .crypto-key{
+      color: rgb(160, 160, 0);
+      font-weight: bolder;
+    }
+    .crypto-value{
+      color: green;
+    }
   }
+  
+}
+

@@ -62,5 +62,7 @@ export class BuySellComponent {
       console.log('The dialog was closed');
     });
   }
-
+  getChangeTextClass(changePercent: number): string {
+    return changePercent < 0 ? 'red-text' : 'green-text';
+  }
 }

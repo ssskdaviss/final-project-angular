@@ -1,21 +1,28 @@
+
 body {
-    background-color: #f0f0f0;
+    background-color: #141414;
     font-family: Arial, sans-serif;
+    padding-top: 60px;
   }
   
   .register {
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: #0c0c0c;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     width: 300px;
     margin: 0 auto;
     text-align: center;
+    h1{
+      color:#4caf50 ;
+      font-size: 30px;
+      font-weight: bold;
+    }
   
     i {
       font-size: 36px;
       margin-bottom: 10px;
-      color: #3498db;
+      color: #4caf50;
     }
   
     label {
@@ -24,6 +31,7 @@ body {
       text-align: left;
       font-weight: bold;
       font-size: 14px;
+      color: white;
     }
   
     input {
@@ -33,11 +41,13 @@ body {
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
+      background-color: #333;
+      color: white;
     }
   
     .submit {
-      background-color: #3498db;
-      color: #fff;
+      background-color: #4caf50;
+      color: #000000;
       border: none;
       border-radius: 5px;
       padding: 10px 20px;

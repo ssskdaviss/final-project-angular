@@ -23,7 +23,7 @@ export class WalletComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef,
     public dialog: MatDialog,
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');

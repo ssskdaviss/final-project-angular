@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.scss'],
@@ -43,7 +43,7 @@ export class RegisterFormComponent implements OnInit {
         cvc: '',
       },
       crypto: [[]],
-      history:[[]]
+      history: [[]]
     },
     {
       validators: [],
@@ -54,9 +54,9 @@ export class RegisterFormComponent implements OnInit {
     public fb: FormBuilder,
     public router: Router,
     private http: HttpClient
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   public editingIndex: number | null = null;
 

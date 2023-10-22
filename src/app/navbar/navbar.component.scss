@@ -1,46 +1,77 @@
 nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
-
+  background-color: #ffffff;
+  color: #000000;
   display: flex;
-  justify-content: space-between;
-background-color: black;
-  ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-    li {
-      margin-right: 20px;
-      div {
-        a {
-          text-decoration: none;
-          color: white;
-          i {
-            margin-right: 5px;
-          }
-        }
-      }
-    }
+nav a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline; 
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li div a {
+  margin: 18px;
+  font-weight: bolder;
+}
+
+.nav-logo img {
+  width: 60px;
+}
+
+.right.right-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.right-button-container a,
+.right-button-container button {
+  text-decoration: none;
+  color: #000000;
+  margin: 0 10px;
+  font-weight: bolder;
+  transition: color 0.3s;
+  padding: 5px 10px;
+}
+
+.right-button-container a:hover,
+.right-button-container button:hover {
+  text-decoration: underline;
+  background-color: #ffa500;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #0061a8;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 20px;
   }
 
-  .right {
+  nav ul.show {
     display: flex;
-    align-items: center;
+  }
 
-    .logout, .credit-card {
-      margin-right: 20px;
-
-      button {
-        background: none;
-        border: none;
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
-        i {
-          margin-right: 5px;
-        }
-      }
-    }
+  nav ul li {
+    margin: 10px 0;
   }
 }

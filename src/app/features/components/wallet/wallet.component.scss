@@ -1,0 +1,50 @@
+body {
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.dashboard {
+  background-color: #0d0d0d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  h1 {
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+
+  .crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      background-color: #4caf50;
+      color: #000000;
+      padding: 10px;
+    }
+
+    td {
+      background-color: #0d0d0d;
+      color: #fff;
+      padding: 15px;
+      font-size: large;
+
+      button {
+        background-color: #4caf50;
+        color: #000000;
+        font-weight: bold;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: medium;
+      }
+    }
+  }
+}
