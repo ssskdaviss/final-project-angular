@@ -1,61 +1,56 @@
 body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #141414;
-
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   .login-form {
-    background-color: #0c0c0c;
-    color: #ffffff;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: #4caf50 solid 2px;
-    transform: translate(0, -200px);
-    div{
-      text-align: center;
-      h2{
-        color: #4caf50;
-      }
+    width: 400px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    i {
+      color: #0055ff;
+      font-size: 20px;
     }
     label {
       display: block;
+      text-align: left;
       margin-bottom: 10px;
 
-      input[type="email"],
-      input[type="password"] {
+      input {
         width: 100%;
         padding: 10px;
-        border: 1px solid #666;
-        border-radius: 5px;
-        background-color: #333;
-        color: #fff;
-
-        &:focus {
-          outline: none;
-          border-color: #4caf50;
-        }
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
       }
     }
 
     button {
-      background-color: #4caf50;
+      background-color: #0055ff;
       color: #fff;
-      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
+      margin-top: 20px;
 
       &:disabled {
-        background-color: #777;
+        background-color: #ccc;
         cursor: not-allowed;
       }
     }
-  }
-
-  i.fa-solid.fa-right-to-bracket {
-    font-size: 24px;
-    color: #4caf50;
   }
 }

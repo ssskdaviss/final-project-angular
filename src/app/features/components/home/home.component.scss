@@ -1,7 +1,5 @@
-* {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
 body {
+ 
   .home {
     padding-top: 40px;
     display: flex;
@@ -13,6 +11,7 @@ body {
       img {
         max-width: 80%;
         height: 80%;
+        
       }
     }
     .get-started {
@@ -39,6 +38,8 @@ body {
           font-weight: bold;
           border-radius: 10px;
           font-size: 20px;
+          box-shadow: #00329e8c 5px 5px, #00247050 10px 10px,
+            #00174737 15px 15px, #00103429 20px 20px;
         }
       }
     }

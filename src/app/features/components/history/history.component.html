@@ -2,10 +2,11 @@
 
   <div>
     <h1><i class="fa-solid fa-money-bills"></i> User Transaction History</h1>
+    
     <table>
       <thead>
         <tr>
-          <th>Crypto ID</th>
+          <th class="name">Crypto</th>
           <th>Amount</th>
           <th>Price (USD)</th>
           <th>Action</th>
@@ -14,11 +15,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let transaction of user?.history">
-          <td>{{ transaction.id }}</td>
+          <td><b>{{ transaction.id }}</b></td>
           <td>{{ transaction.amount | numberFormat }}</td>
-          <td>{{ transaction.priceUsd | numberFormat }}</td>
-          <td>{{ transaction.type }}</td>
-
+          <td>$ {{ transaction.priceUsd | numberFormat }}</td>
+          <td>
+            <ng-container *ngIf="transaction.type === 'buy'; else sellIcon">
+              <i class="fa-solid fa-cart-shopping" style="color: green;"> +</i>
+            </ng-container>
+            <ng-template #sellIcon>
+              <i class="fa-solid fa-money-bill-transfer" style="color: red;"> ⚊</i>
+            </ng-template>
+          </td>
         </tr>
       </tbody>
     </table>

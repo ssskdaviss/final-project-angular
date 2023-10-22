@@ -1,15 +1,28 @@
 <body>
-
-<div *ngIf="user">
-  <h1>User Profile</h1>
-  <i class="fa-regular fa-user"></i>
-  <p>Nickname: {{ user.nickname }}</p>
-  <p>Balance: {{ user.balance | numberFormat}} $</p>
-  <p>Crypto:</p>
-  <ul>
-    <li *ngFor="let crypto of user.crypto">
-     <span class="crypto-key">{{ crypto.id }}:</span> <span class="crypto-value"> {{ crypto.cryptoAmount | numberFormat }}</span>
-    </li>
-  </ul>
-</div>
+  <div *ngIf="user">
+    <i class="fa-regular fa-user"></i>
+    <h1>User Profile</h1>
+    <table>
+      <tr class="head">
+        <td></td>
+        <td>Nickname:</td>
+        <td>{{ user.nickname }}</td>
+      </tr>
+      <tr class="head">
+        <td></td>
+        <td>Balance:</td>
+        <td>{{ user.balance | numberFormat }} $</td>
+      </tr>
+      <tr class="head">
+        <td></td>
+        <td class="crypto"><i class="fa-brands fa-bitcoin">crypto</i></td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let crypto of user.crypto">
+        <td></td>
+        <td class="crypto-key">{{ crypto.id }}:</td>
+        <td class="crypto-value">{{ crypto.cryptoAmount | numberFormat }}</td>
+      </tr>
+    </table>
+  </div>
 </body>

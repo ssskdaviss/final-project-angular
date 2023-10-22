@@ -1,75 +1,75 @@
-
 body {
-    background-color: #141414;
-    font-family: Arial, sans-serif;
-    padding-top: 60px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   .register {
-    background-color: #0c0c0c;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px;
     padding: 20px;
-    width: 300px;
-    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 320px;
     text-align: center;
-    h1{
-      color:#4caf50 ;
-      font-size: 30px;
-      font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    i {
+      font-size: 48px;
+      color: #014cec;
     }
   
-    i {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #4caf50;
+    h1 {
+      font-size: 24px;
+      margin: 20px 0;
     }
   
     label {
       display: block;
-      margin: 10px 0;
       text-align: left;
-      font-weight: bold;
-      font-size: 14px;
-      color: white;
-    }
+      margin: 10px 0;
   
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      background-color: #333;
-      color: white;
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+  
+        &::placeholder {
+          color: #ccc;
+        }
+      }
+  
+      div {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 4px;
+      }
     }
   
     .submit {
-      background-color: #4caf50;
-      color: #000000;
+      background-color: #014cec;
+      color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 4px;
       padding: 10px 20px;
       font-size: 16px;
-      cursor: pointer;
       margin-top: 20px;
+      cursor: pointer;
+  
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
     }
   
     .reset {
-      background-color: #e74c3c;
-      color: #fff;
+      background-color: transparent;
       border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
       font-size: 16px;
-      cursor: pointer;
       margin-top: 10px;
-    }
-  
-    div {
-      color: #e74c3c;
-      font-size: 14px;
-      margin-top: 5px;
+      color: #014cec;
+      cursor: pointer;
     }
   }
+}
+
