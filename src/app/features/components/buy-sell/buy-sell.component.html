@@ -2,6 +2,7 @@
   <div class="dashboard">
     <i class="fa-solid fa-cart-shopping"></i>
     <h1>Buy Crypto</h1>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search Crypto" class="search-bar">
     <table class="crypto-table">
       <thead>
         <tr>
@@ -12,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let crypto of cryptoData">
+        <tr *ngFor="let crypto of filterCryptoData()">
           <td class="num-font name">{{ crypto.name }}</td>
           <td class="num-font " >$ {{ crypto.priceUsd | numberFormat }}</td>
           <td class="num-font change" [style.color]="

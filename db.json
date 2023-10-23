@@ -5,7 +5,7 @@
       "password": "paroli123",
       "nickname": "giga",
       "phoneNumber": "+995555555555",
-      "balance": 952.5447497409666,
+      "balance": 921.7008488726907,
       "cardInfo": {
         "cardNumber": "3232323232323232",
         "expirationDate": "12/26",
@@ -18,7 +18,7 @@
         },
         {
           "id": "xrp",
-          "cryptoAmount": 170.3695715237248
+          "cryptoAmount": 160.3695715237248
         },
         {
           "id": "injective-protocol",
@@ -26,10 +26,58 @@
         },
         {
           "id": "fei-protocol",
-          "cryptoAmount": 103.65352716589166
+          "cryptoAmount": 99.65352716589166
+        },
+        {
+          "id": "bitcoin",
+          "cryptoAmount": 0.0006414414222769945
+        },
+        {
+          "id": "litecoin",
+          "cryptoAmount": 0.14880197638701478
+        },
+        {
+          "id": "multi-collateral-dai",
+          "cryptoAmount": 9.995837439989907
         }
       ],
       "history": [
+        {
+          "id": "multi-collateral-dai",
+          "type": "buy",
+          "amount": 9.995837439989907,
+          "priceUsd": 10
+        },
+        {
+          "id": "litecoin",
+          "type": "buy",
+          "amount": 0.14880197638701478,
+          "priceUsd": 10
+        },
+        {
+          "id": "fei-protocol",
+          "type": "sell",
+          "amount": 4,
+          "priceUsd": 3.805950338416624
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 5.350148793307465
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0003207792548319082,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00032066216744508627,
+          "priceUsd": 10
+        },
         {
           "id": "fei-protocol",
           "type": "buy",

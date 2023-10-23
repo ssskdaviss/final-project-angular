@@ -17,6 +17,9 @@ import { CreditCardComponent } from '../modals/credit-card/credit-card.component
 import { Router } from '@angular/router';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CryptoService } from '../services/crypto.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../core/interfaces/interfaces';
+import { NumberFormatPipe } from '../shared/number-format.pipe';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -26,18 +29,35 @@ import { CryptoService } from '../services/crypto.service';
     MatDialogModule,
     RouterLink,
     RouterOutlet,
+    NumberFormatPipe
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent implements OnInit{
+  user: User | null = null;
+
   constructor(
     public dialog: MatDialog,
     private router: Router,
     public cryptoservices: CryptoService,
+    private http: HttpClient,
+    private changeDetectorRef: ChangeDetectorRef
   ) { }
   ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      this.http.get<User>(`http://localhost:3000/users/${userId}`).subscribe(
+        (user) => {
+          this.user = user;
+          this.changeDetectorRef.markForCheck();
+        },
+        (error) => {
+          console.error('Failed to fetch user data:', error);
+        }
+      );
+    }
 
   }
   dialogRef!: MatDialogRef<CreditCardComponent>;
@@ -48,7 +68,6 @@ export class NavbarComponent implements OnInit{
       console.log('The dialog was closed');
     });
   }
-
   closeCardModal(): void {
     this.dialogRef.close();
   }
@@ -62,7 +81,6 @@ export class NavbarComponent implements OnInit{
 
     }
   }
-
   userIsLoggedIn(): boolean {
     const email = localStorage.getItem('email');
     const password = localStorage.getItem('password');

@@ -1,23 +1,17 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/services/crypto.service';
-import {
-  CryptoData,
-  cryptoInterface,
-} from 'src/app/core/interfaces/interfaces';
+import { CryptoData, cryptoInterface, } from 'src/app/core/interfaces/interfaces';
 import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
 import { Router, RouterLink } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { BuyCryptoComponent } from 'src/app/modals/buy-crypto/buy-crypto.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-buy-sell',
   standalone: true,
-  imports: [CommonModule, NumberFormatPipe, BuyCryptoComponent],
+  imports: [CommonModule, NumberFormatPipe, BuyCryptoComponent, FormsModule],
   templateUrl: './buy-sell.component.html',
   styleUrls: ['./buy-sell.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,7 +23,7 @@ export class BuySellComponent {
   constructor(
     private cryptoService: CryptoService,
     private cd: ChangeDetectorRef,
-    public dialog: MatDialog  ) {}
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchCryptoData();
@@ -62,7 +56,16 @@ export class BuySellComponent {
       console.log('The dialog was closed');
     });
   }
+  
   getChangeTextClass(changePercent: number): string {
     return changePercent < 0 ? 'red-text' : 'green-text';
+  }
+
+  filterCryptoData(): CryptoData[] {
+    const searchText = this.searchText.toLowerCase();
+    return this.cryptoData.filter(crypto =>
+      crypto.name.toLowerCase().includes(searchText) ||
+      crypto.symbol.toLowerCase().includes(searchText)
+    );
   }
 }

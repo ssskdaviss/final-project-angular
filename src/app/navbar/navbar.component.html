@@ -42,17 +42,22 @@
     </ul>
     <div class="right right-button-container">
       <ul class="right-ul">
+        <li *ngIf="userIsLoggedIn()">
+          <div class="accaunt" *ngIf="user">           
+            <i class="fa-regular fa-user"> {{ user.balance | numberFormat }} $</i>
+          </div>
+        </li>
         <li *ngIf="!userIsLoggedIn()">
           <div class="register">
             <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
-              Register
+              Get started
             </a>
           </div>
         </li>
         <li *ngIf="!userIsLoggedIn()">
           <div class="login">
             <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
-              Login
+              Sign In
             </a>
           </div>
         </li>
@@ -70,6 +75,7 @@
             </button>
           </div>
         </li>
+       
       </ul>
     </div>
   </div>
