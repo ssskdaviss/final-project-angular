@@ -1,108 +1,98 @@
-$background-color: #121212;
-$text-color: #4caf50;
+$text-color: #014cec;
 
-body {
-  background-color: $background-color;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.dashboard {
-  background-color: $background-color;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-
-}
-
-h1 {
-  color: $text-color;
-  font-size: 35px;
-  font-weight: bolder;
-  i{
-    color: yellow;
-  }
-}
-
-input[type="text"] {
-  background-color: $background-color;
-  color: $text-color;
-  border: 1px solid $text-color;
-  padding: 5px;
-  border-radius: 5px;
-  width: 100%;
-  margin-bottom: 20px;
-  height: 35px;
-}
-
-.crypto-table {
-  width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid $text-color;
+div {
+  .dashboard {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-align: center;
   }
 
-  th {
-    background-color: darken($background-color, 10%);
+  h1 {
     color: $text-color;
-    font-size: 15px;
-  }
-
-  td {
-    background-color: $background-color;
-    color: white;
-    font-size: 20px;
-  }
-
-  tr:nth-child(even) {
-    background-color: darken($background-color, 5%);
-  }
-}
-
-.pagination-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-
-  button {
-    background-color: $text-color;
-    color: $background-color;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  span {
-    color: $text-color;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: bold;
+    i {
+      color: #014cec;
+    }
   }
 
-  button:disabled {
-    background-color: lighten($text-color, 30%);
-    cursor: not-allowed;
+  input[type="text"] {
+    color: $text-color;
+    border: 1px solid $text-color;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
   }
 
-  button:first-child {
-    margin-right: 10px; 
+  .crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid $text-color;
+    }
+
+    th {
+      color: $text-color;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+    td {
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
-}
 
-a {
-  color: $text-color;
-  text-decoration: none;
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 
-  i {
-    font-size: 20px;
+    button {
+      background-color: $text-color;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    span {
+      color: $text-color;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button:disabled {
+      background-color: lighten($text-color, 30%);
+      cursor: not-allowed;
+    }
+
+    button:first-child {
+      margin-right: 10px;
+    }
   }
 
-  &:hover {
-    color: lighten($text-color, 20%);
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    i {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: lighten($text-color, 20%);
+    }
   }
 }

@@ -1,30 +1,113 @@
 <body>
-
   <div>
     <h1><i class="fa-solid fa-money-bills"></i> User Transaction History</h1>
-    
+
     <table>
       <thead>
         <tr>
           <th class="name">Crypto</th>
           <th>Amount</th>
-          <th>Price (USD)</th>
+          <th>$ in USD</th>
           <th>Action</th>
-
+          <th>Bought For</th>
+          <th>Live Price</th>
+          <th>Difference</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let transaction of user?.history">
-          <td><b>{{ transaction.id }}</b></td>
+          <td>
+            <b>{{ transaction.id }}</b>
+          </td>
           <td>{{ transaction.amount | numberFormat }}</td>
           <td>$ {{ transaction.priceUsd | numberFormat }}</td>
           <td>
             <ng-container *ngIf="transaction.type === 'buy'; else sellIcon">
-              <i class="fa-solid fa-cart-shopping" style="color: green;"> +</i>
+              <i class="fa-solid fa-cart-shopping" style="color: green"> +</i>
             </ng-container>
             <ng-template #sellIcon>
-              <i class="fa-solid fa-money-bill-transfer" style="color: red;"> ⚊</i>
+              <i class="fa-solid fa-money-bill-transfer" style="color: #840808">
+                ⚊</i
+              >
             </ng-template>
+          </td>
+          <td>
+            $ {{ transaction.priceUsd / transaction.amount | numberFormat }}
+          </td>
+          <td>$ {{ getCryptoLivePrice(transaction.id) | numberFormat }}</td>
+          <td>
+            <ng-container
+              *ngIf="
+                (getCryptoLivePrice(transaction.id) /
+                  (transaction.priceUsd / transaction.amount)) *
+                  100 -
+                  100 >=
+                  0 && transaction.type === 'buy';
+              "
+            >
+              <span style="color: green"
+                >{{
+                  (getCryptoLivePrice(transaction.id) /
+                    (transaction.priceUsd / transaction.amount)) *
+                    100 -
+                    100 | numberFormat
+                }}%</span
+              >
+            </ng-container>
+            <ng-container
+              *ngIf="
+                (getCryptoLivePrice(transaction.id) /
+                  (transaction.priceUsd / transaction.amount)) *
+                  100 -
+                  100 <
+                  0 && transaction.type === 'buy';
+              "
+            >
+              <span style="color: #840808"
+                >{{
+                  (getCryptoLivePrice(transaction.id) /
+                    (transaction.priceUsd / transaction.amount)) *
+                    100 -
+                    100 | numberFormat
+                }}%</span
+              >
+            </ng-container>
+            <ng-container
+              *ngIf="
+                (getCryptoLivePrice(transaction.id) /
+                  (transaction.priceUsd / transaction.amount)) *
+                  100 -
+                  100 >=
+                  0 && transaction.type === 'sell';
+              "
+            >
+              <span style="color: #840808"
+                >{{
+                  (getCryptoLivePrice(transaction.id) /
+                    (transaction.priceUsd / transaction.amount)) *
+                    100 -
+                    100 | numberFormat
+                }}%</span
+              >
+            </ng-container>
+            <ng-container
+              *ngIf="
+                (getCryptoLivePrice(transaction.id) /
+                  (transaction.priceUsd / transaction.amount)) *
+                  100 -
+                  100 <
+                  0 && transaction.type === 'sell';
+              "
+            >
+              <span style="color: green"
+                >{{
+                  (getCryptoLivePrice(transaction.id) /
+                    (transaction.priceUsd / transaction.amount)) *
+                    100 -
+                    100 | numberFormat
+                }}%</span
+              >
+            </ng-container>
           </td>
         </tr>
       </tbody>

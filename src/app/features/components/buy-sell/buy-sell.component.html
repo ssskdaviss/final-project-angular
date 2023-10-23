@@ -1,4 +1,4 @@
-<body>
+<div class="container">
   <div class="dashboard">
     <h1>Buy Crypto <i class="fa-solid fa-cart-shopping"></i></h1>
     <table class="crypto-table">
@@ -7,7 +7,7 @@
           <th>Name</th>
           <th>Price</th>
           <th class="change-th">Change</th>
-          <th>Action</th>
+          <th style="text-align: right; padding-right: 8px;">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -16,9 +16,9 @@
           <td>$ {{ crypto.priceUsd | numberFormat }}</td>
           <td class="change" [ngClass]="getChangeTextClass(crypto.changePercent24Hr)">
             {{ crypto.changePercent24Hr | numberFormat }} %</td>
-          <td><button (click)="openBuyModal(crypto)">Buy</button></td>
+          <td align="right"><button (click)="openBuyModal(crypto)">Buy</button></td>
         </tr>
       </tbody>
     </table>
   </div>
-</body>
+</div>

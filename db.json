@@ -5,7 +5,7 @@
       "password": "paroli123",
       "nickname": "giga",
       "phoneNumber": "+995555555555",
-      "balance": 1092.5937485407558,
+      "balance": 952.5447497409666,
       "cardInfo": {
         "cardNumber": "3232323232323232",
         "expirationDate": "12/26",
@@ -13,331 +13,87 @@
       },
       "crypto": [
         {
+          "id": "avalanche",
+          "cryptoAmount": 1.0730899879124163
+        },
+        {
           "id": "xrp",
-          "cryptoAmount": 117.2110305515622
+          "cryptoAmount": 170.3695715237248
         },
         {
-          "id": "tron",
-          "cryptoAmount": 0.0026701520648202415
+          "id": "injective-protocol",
+          "cryptoAmount": 0.9703515533711268
         },
         {
-          "id": "shiba-inu",
-          "cryptoAmount": 4715801.6434866
-        },
-        {
-          "id": "bitcoin",
-          "cryptoAmount": 0.0011371958291168836
-        },
-        {
-          "id": "ethereum",
-          "cryptoAmount": 0.012208828107648576
-        },
-        {
-          "id": "solana",
-          "cryptoAmount": 0.34778565052752036
-        },
-        {
-          "id": "dogecoin",
-          "cryptoAmount": 164.20101663272254
-        },
-        {
-          "id": "tether",
-          "cryptoAmount": 9.990485844283244
-        },
-        {
-          "id": "wrapped-bitcoin",
-          "cryptoAmount": 0.0003346219547503889
-        },
-        {
-          "id": "litecoin",
-          "cryptoAmount": 0.15483325591842861
-        },
-        {
-          "id": "bitcoin-cash",
-          "cryptoAmount": 0.0414933753610613
-        },
-        {
-          "id": "unus-sed-leo",
-          "cryptoAmount": 2.5958071169061014
-        },
-        {
-          "id": "lido-dao",
-          "cryptoAmount": 5.880506448535493
-        },
-        {
-          "id": "maker",
-          "cryptoAmount": 0.007009623695676163
-        },
-        {
-          "id": "theta-fuel",
-          "cryptoAmount": 582.1216906801055
-        },
-        {
-          "id": "singularitynet",
-          "cryptoAmount": 111.49861800304805
-        },
-        {
-          "id": "aelf",
-          "cryptoAmount": 57.95633809568484
-        },
-        {
-          "id": "qtum",
-          "cryptoAmount": 4.390557434069695
-        },
-        {
-          "id": "dydx",
-          "cryptoAmount": 5.102913287549048
-        },
-        {
-          "id": "huobi-token",
-          "cryptoAmount": 4.350255940389505
-        },
-        {
-          "id": "gala",
-          "cryptoAmount": 713.8034997498086
-        },
-        {
-          "id": "ftx-token",
-          "cryptoAmount": 9.575433867978099
-        },
-        {
-          "id": "nem",
-          "cryptoAmount": 366.5686318453382
-        },
-        {
-          "id": "helium",
-          "cryptoAmount": 6.728868165920557
-        },
-        {
-          "id": "enjin-coin",
-          "cryptoAmount": 45.70101662995858
-        },
-        {
-          "id": "mask-network",
-          "cryptoAmount": 3.7368816848209057
+          "id": "fei-protocol",
+          "cryptoAmount": 103.65352716589166
         }
       ],
       "history": [
         {
-          "id": "singularitynet",
+          "id": "fei-protocol",
           "type": "buy",
-          "amount": 55.89945645618877,
-          "priceUsd": 10
+          "amount": 103.65352716589166,
+          "priceUsd": 100
         },
         {
-          "id": "mask-network",
+          "id": "injective-protocol",
           "type": "buy",
-          "amount": 3.7368816848209057,
+          "amount": 0.9703515533711268,
           "priceUsd": 10
-        },
-        {
-          "id": "enjin-coin",
-          "type": "buy",
-          "amount": 45.70101662995858,
-          "priceUsd": 10
-        },
-        {
-          "id": "theta-fuel",
-          "type": "buy",
-          "amount": 291.3708438506682,
-          "priceUsd": 10
-        },
-        {
-          "id": "helium",
-          "type": "buy",
-          "amount": 6.728868165920557,
-          "priceUsd": 10
-        },
-        {
-          "id": "unus-sed-leo",
-          "type": "sell",
-          "amount": 0,
-          "priceUsd": 0
-        },
-        {
-          "id": "dogecoin",
-          "type": "sell",
-          "amount": 0,
-          "priceUsd": 0
-        },
-        {
-          "id": "aelf",
-          "type": "buy",
-          "amount": 28.979580427738952,
-          "priceUsd": 10
-        },
-        {
-          "id": "nem",
-          "type": "buy",
-          "amount": 366.5686318453382,
-          "priceUsd": 10
-        },
-        {
-          "id": "ftx-token",
-          "type": "buy",
-          "amount": 9.575433867978099,
-          "priceUsd": 10
-        },
-        {
-          "id": "gala",
-          "type": "buy",
-          "amount": 713.8034997498086,
-          "priceUsd": 10
-        },
-        {
-          "id": "huobi-token",
-          "type": "buy",
-          "amount": 4.350255940389505,
-          "priceUsd": 10
-        },
-        {
-          "id": "dydx",
-          "type": "buy",
-          "amount": 5.102913287549048,
-          "priceUsd": 10
-        },
-        {
-          "id": "qtum",
-          "type": "buy",
-          "amount": 4.390557434069695,
-          "priceUsd": 10
-        },
-        {
-          "id": "aelf",
-          "type": "buy",
-          "amount": 28.97675766794589,
-          "priceUsd": 10
-        },
-        {
-          "id": "singularitynet",
-          "type": "buy",
-          "amount": 55.59916154685927,
-          "priceUsd": 10
-        },
-        {
-          "id": "theta-fuel",
-          "type": "buy",
-          "amount": 290.75084682943725,
-          "priceUsd": 10
-        },
-        {
-          "id": "maker",
-          "type": "buy",
-          "amount": 0.007009623695676163,
-          "priceUsd": 10
-        },
-        {
-          "id": "lido-dao",
-          "type": "buy",
-          "amount": 5.880506448535493,
-          "priceUsd": 10
-        },
-        {
-          "id": "unus-sed-leo",
-          "type": "buy",
-          "amount": 2.5958071169061014,
-          "priceUsd": 10
-        },
-        {
-          "id": "bitcoin-cash",
-          "type": "buy",
-          "amount": 0.0414933753610613,
-          "priceUsd": 10
-        },
-        {
-          "id": "litecoin",
-          "type": "buy",
-          "amount": 0.15483325591842861,
-          "priceUsd": 10
-        },
-        {
-          "id": "wrapped-bitcoin",
-          "type": "buy",
-          "amount": 0.0003346219547503889,
-          "priceUsd": 10
-        },
-        {
-          "id": "tether",
-          "type": "buy",
-          "amount": 9.990485844283244,
-          "priceUsd": 10
-        },
-        {
-          "id": "ethereum",
-          "type": "buy",
-          "amount": 0.006104144765146541,
-          "priceUsd": 10
-        },
-        {
-          "id": "tron",
-          "type": "sell",
-          "amount": 2000,
-          "priceUsd": 183.2891877149138
-        },
-        {
-          "id": "shiba-inu",
-          "type": "sell",
-          "amount": 5000000,
-          "priceUsd": 35.228317124
         },
         {
           "id": "xrp",
           "type": "sell",
           "amount": 10,
-          "priceUsd": 5.170579154823444
-        },
-        {
-          "id": "shiba-inu",
-          "type": "sell",
-          "amount": 8,
-          "priceUsd": 0.0000558917686904
+          "priceUsd": 5.281316052079981
         },
         {
           "id": "xrp",
           "type": "sell",
-          "amount": 17,
-          "priceUsd": 8.798664947579141
-        },
-        {
-          "id": "xrp",
-          "type": "sell",
-          "amount": 50,
-          "priceUsd": 25.710911136671854
-        },
-        {
-          "id": "tron",
-          "type": "sell",
-          "amount": 200,
-          "priceUsd": 18.17770974379176
-        },
-        {
-          "id": "shiba-inu",
-          "type": "sell",
-          "amount": 1000000,
-          "priceUsd": 6.9229777521
-        },
-        {
-          "id": "shiba-inu",
-          "type": "sell",
-          "amount": 100000,
-          "priceUsd": 0.69229777521
-        },
-        {
-          "id": "shiba-inu",
-          "type": "buy",
-          "amount": 20955809.6434866,
-          "priceUsd": 145
-        },
-        {
-          "id": "tron",
-          "type": "buy",
-          "amount": 2200.802670152065,
-          "priceUsd": 200
+          "amount": 9,
+          "priceUsd": 4.752611482184429
         },
         {
           "id": "xrp",
           "type": "buy",
-          "amount": 194.2110305515622,
+          "amount": 189.3695715237248,
+          "priceUsd": 100
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 1,
+          "priceUsd": 9.932515446523617
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 1,
+          "priceUsd": 9.933056866239044
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 1,
+          "priceUsd": 9.944439072722096
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 1,
+          "priceUsd": 9.947181022260471
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 5,
+          "priceUsd": 49.671510112585615
+        },
+        {
+          "id": "avalanche",
+          "type": "buy",
+          "amount": 10.073089987912416,
           "priceUsd": 100
         }
       ],

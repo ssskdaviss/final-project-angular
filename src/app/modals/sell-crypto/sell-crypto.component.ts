@@ -21,6 +21,7 @@ import {
 } from '../../shared/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
 import { CryptoService } from 'src/app/services/crypto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sell-crypto',
@@ -51,6 +52,7 @@ export class SellCryptoComponent implements OnInit {
     private http: HttpClient,
     private cryptoService: CryptoService,
     private cd: ChangeDetectorRef,
+    private router: Router,
     private dialogRef: MatDialogRef<SellCryptoComponent> //close modal
   ) {
     this.sellForm = this.fb.group({
@@ -133,6 +135,9 @@ export class SellCryptoComponent implements OnInit {
             });
         });
     }
+    this.router.navigateByUrl('/buySell', { skipLocationChange: true }).then(()=>{
+      this.router.navigate(["/wallet"])
+    })
   }
   closeSellModal(): void {
     this.dialogRef.close();

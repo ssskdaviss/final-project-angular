@@ -1,74 +1,76 @@
-<nav>
+<nav >
   
-  <div class="home">
-    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
-      <img src="../../assets/images/logo.svg" alt="">
-
-    </a>
-  </div>
-  <ul class="middle-ul">
-    <li class="middle">
-      <div class="dashboard">
-        <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Dashboard </a>
-      </div>
-    </li>
-    <li class="middle">
-      <div class="buy">
-        <a routerLink="/buySell" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Buy</a>
-      </div>
-    </li>
-    <li class="middle">
-      <div class="wallet">
-        <a routerLink="/wallet" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Wallet</a>
-      </div>
-    </li>
-    <li class="middle">
-      <div class="profile">
-        <a routerLink="/userProfile" routerLinkActive="active" ariaCurrentWhenActive="page">
-          Profile
-        </a>
-      </div>
-    </li>
-    <li class="middle">
-      <div class="history">
-        <a routerLink="/history" routerLinkActive="active" ariaCurrentWhenActive="page"> History
-        </a>
-      </div>
-    </li>
-  </ul>
-  <div class="right right-button-container">
-    <ul class="right-ul">
-      <li *ngIf="!userIsLoggedIn()">
-        <div class="register">
-          <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
-            Register
+  <div class="container">
+    <div class="home">
+      <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <img src="../../assets/images/logo.svg" alt="">
+  
+      </a>
+    </div>
+    <ul class="middle-ul">
+      <li class="middle">
+        <div class="dashboard">
+          <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">
+            Dashboard </a>
+        </div>
+      </li>
+      <li class="middle">
+        <div class="buy">
+          <a routerLink="/buySell" routerLinkActive="active" ariaCurrentWhenActive="page">
+            Buy</a>
+        </div>
+      </li>
+      <li class="middle">
+        <div class="wallet">
+          <a routerLink="/wallet" routerLinkActive="active" ariaCurrentWhenActive="page">
+            Wallet</a>
+        </div>
+      </li>
+      <li class="middle">
+        <div class="profile">
+          <a routerLink="/userProfile" routerLinkActive="active" ariaCurrentWhenActive="page">
+            Profile
           </a>
         </div>
       </li>
-      <li *ngIf="!userIsLoggedIn()">
-        <div class="login">
-          <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
-            Login
+      <li class="middle">
+        <div class="history">
+          <a routerLink="/history" routerLinkActive="active" ariaCurrentWhenActive="page"> History
           </a>
-        </div>
-      </li>
-      <li *ngIf="userIsLoggedIn()">
-        <div class="logout">
-          <button (click)="logout()">
-            Log Out
-          </button>
-        </div>
-      </li>
-      <li *ngIf="userIsLoggedIn()">
-        <div class="credit-card">
-          <button (click)="openCardModal()">
-            Credit Card
-          </button>
         </div>
       </li>
     </ul>
+    <div class="right right-button-container">
+      <ul class="right-ul">
+        <li *ngIf="!userIsLoggedIn()">
+          <div class="register">
+            <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Register
+            </a>
+          </div>
+        </li>
+        <li *ngIf="!userIsLoggedIn()">
+          <div class="login">
+            <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+              Login
+            </a>
+          </div>
+        </li>
+        <li *ngIf="userIsLoggedIn()">
+          <div class="logout">
+            <button (click)="logout()">
+              Log Out
+            </button>
+          </div>
+        </li>
+        <li *ngIf="userIsLoggedIn()">
+          <div class="credit-card">
+            <button (click)="openCardModal()">
+              Credit Card
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

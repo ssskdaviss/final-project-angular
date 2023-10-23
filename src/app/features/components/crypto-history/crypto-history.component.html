@@ -1,7 +1,9 @@
 <div class="crypto-history">
-    <h1>Crypto History for {{ cryptoId }}</h1>
+  <h1>Crypto History for {{ cryptoId }}</h1>
+  <div>
     <button (click)="changeInterval('d1')">1 Year</button>
     <button (click)="changeInterval('h1')">1 Month</button>
     <button (click)="changeInterval('m1')">1 Day</button>
-    <canvas id="cryptoHistoryChart" ></canvas>
   </div>
+  <canvas id="cryptoHistoryChart"></canvas>
+</div>

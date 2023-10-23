@@ -60,7 +60,7 @@ export class CryptoHistoryComponent implements OnInit {
           {
             label: 'Price (USD)',
             data: this.cryptoHistory.map((data) => data.priceUsd),
-            borderColor: 'black',
+            borderColor: '#014cec',
             fill: false,
             tension: 0.1
 
