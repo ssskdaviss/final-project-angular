@@ -11,13 +11,6 @@ export class CryptoService {
   constructor(private http: HttpClient) {}
 
 //conditional  rendering
-  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
-
-  setLoggedIn(value: boolean) {
-    this.isLoggedInSubject.next(value);
-  }
-
 
   
   fetchCryptoData(): Observable<CryptoResponse> {

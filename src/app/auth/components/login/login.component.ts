@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/interfaces';
-import { CryptoService } from 'src/app/services/crypto.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -15,19 +14,19 @@ import { CryptoService } from 'src/app/services/crypto.service';
 })
 export class LoginComponent {
   loginForm = this.fb.group({
-    email: ['',[Validators.required]],
-    password: ['',[Validators.required]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private cryptoservices: CryptoService
-  ) {}
+    private cdr: ChangeDetectorRef
+  ) { }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
@@ -41,13 +40,12 @@ export class LoginComponent {
           );
           if (authenticatedUser) {
             console.log('Login successful:', authenticatedUser);
-
             localStorage.setItem('email', authenticatedUser.email);
             localStorage.setItem('password', authenticatedUser.password);
             localStorage.setItem('userId', authenticatedUser.id);
-            this.cryptoservices.setLoggedIn(true);
+            this.cdr.markForCheck();
+            this.router.navigate(['/home']);
 
-            this.router.navigate(['/dashboard']);
           } else {
             alert('Login failed: Invalid credentials');
           }

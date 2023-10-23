@@ -5,7 +5,7 @@
       "password": "paroli123",
       "nickname": "giga",
       "phoneNumber": "+995555555555",
-      "balance": 1142.5937485407558,
+      "balance": 1092.5937485407558,
       "cardInfo": {
         "cardNumber": "3232323232323232",
         "expirationDate": "12/26",
@@ -70,11 +70,11 @@
         },
         {
           "id": "theta-fuel",
-          "cryptoAmount": 290.75084682943725
+          "cryptoAmount": 582.1216906801055
         },
         {
           "id": "singularitynet",
-          "cryptoAmount": 55.59916154685927
+          "cryptoAmount": 111.49861800304805
         },
         {
           "id": "aelf",
@@ -103,9 +103,63 @@
         {
           "id": "nem",
           "cryptoAmount": 366.5686318453382
+        },
+        {
+          "id": "helium",
+          "cryptoAmount": 6.728868165920557
+        },
+        {
+          "id": "enjin-coin",
+          "cryptoAmount": 45.70101662995858
+        },
+        {
+          "id": "mask-network",
+          "cryptoAmount": 3.7368816848209057
         }
       ],
       "history": [
+        {
+          "id": "singularitynet",
+          "type": "buy",
+          "amount": 55.89945645618877,
+          "priceUsd": 10
+        },
+        {
+          "id": "mask-network",
+          "type": "buy",
+          "amount": 3.7368816848209057,
+          "priceUsd": 10
+        },
+        {
+          "id": "enjin-coin",
+          "type": "buy",
+          "amount": 45.70101662995858,
+          "priceUsd": 10
+        },
+        {
+          "id": "theta-fuel",
+          "type": "buy",
+          "amount": 291.3708438506682,
+          "priceUsd": 10
+        },
+        {
+          "id": "helium",
+          "type": "buy",
+          "amount": 6.728868165920557,
+          "priceUsd": 10
+        },
+        {
+          "id": "unus-sed-leo",
+          "type": "sell",
+          "amount": 0,
+          "priceUsd": 0
+        },
+        {
+          "id": "dogecoin",
+          "type": "sell",
+          "amount": 0,
+          "priceUsd": 0
+        },
         {
           "id": "aelf",
           "type": "buy",

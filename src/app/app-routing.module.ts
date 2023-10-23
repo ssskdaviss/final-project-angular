@@ -28,15 +28,14 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () => import('./features/components/dashboard/dashboard.component')
-      .then(m => m.DashboardComponent),
-      canActivate: [AuthGuard]
-   
+      .then(m => m.DashboardComponent)   
   } ,  
   {
     path: 'userProfile',
     loadComponent: () => import('./features/components/user-profile/user-profile.component')
       .then(m => m.UserProfileComponent),
       canActivate: [AuthGuard]
+
    
   } ,
   {

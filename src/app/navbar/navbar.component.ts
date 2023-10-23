@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
 import {
@@ -29,9 +31,15 @@ import { CryptoService } from '../services/crypto.service';
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
-  constructor(public dialog: MatDialog, private router: Router,public cryptoservices: CryptoService
-    ) {}
+export class NavbarComponent implements OnInit{
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    public cryptoservices: CryptoService,
+  ) { }
+  ngOnInit(): void {
+
+  }
   dialogRef!: MatDialogRef<CreditCardComponent>;
   openCardModal(): void {
     this.dialogRef = this.dialog.open(CreditCardComponent, {});
@@ -44,17 +52,20 @@ export class NavbarComponent {
   closeCardModal(): void {
     this.dialogRef.close();
   }
-
   logout(): void {
     const confirmLogout = window.confirm('Are you sure you want to Log Out?');
-
     if (confirmLogout) {
       localStorage.removeItem('email');
       localStorage.removeItem('password');
       localStorage.removeItem('userId');
-      this.router.navigate(['/login']);
-      location.reload(); 
+      this.router.navigate(['/home']);
 
     }
+  }
+
+  userIsLoggedIn(): boolean {
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+    return !!email && !!password;
   }
 }

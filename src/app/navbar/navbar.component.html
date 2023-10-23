@@ -41,28 +41,28 @@
   </ul>
   <div class="right right-button-container">
     <ul class="right-ul">
-      <li *ngIf="!(cryptoservices.isLoggedIn$ | async)">
+      <li *ngIf="!userIsLoggedIn()">
         <div class="register">
           <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">
             Register
           </a>
         </div>
       </li>
-      <li *ngIf="!(cryptoservices.isLoggedIn$ | async)">
+      <li *ngIf="!userIsLoggedIn()">
         <div class="login">
           <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
             Login
           </a>
         </div>
       </li>
-      <li *ngIf="(cryptoservices.isLoggedIn$ | async)">
+      <li *ngIf="userIsLoggedIn()">
         <div class="logout">
           <button (click)="logout()">
             Log Out
           </button>
         </div>
       </li>
-      <li *ngIf="(cryptoservices.isLoggedIn$ | async)">
+      <li *ngIf="userIsLoggedIn()">
         <div class="credit-card">
           <button (click)="openCardModal()">
             Credit Card
