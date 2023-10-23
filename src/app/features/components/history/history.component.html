@@ -1,17 +1,17 @@
-<body>
+<div class="container">
   <div>
-    <h1><i class="fa-solid fa-money-bills"></i> User Transaction History</h1>
-
+    <i class="fa-solid fa-money-bills"></i> 
+    <h1>User Transaction History</h1>
     <table>
       <thead>
         <tr>
           <th class="name">Crypto</th>
           <th>Amount</th>
-          <th>$ in USD</th>
+          <th class="header">$ in USD</th>
           <th>Action</th>
-          <th>Bought For</th>
-          <th>Live Price</th>
-          <th>Difference</th>
+          <th class="header">Bought For</th>
+          <th class="header">Live Price</th>
+          <th class="header">Difference</th>
         </tr>
       </thead>
       <tbody>
@@ -19,98 +19,81 @@
           <td>
             <b>{{ transaction.id }}</b>
           </td>
-          <td>{{ transaction.amount | numberFormat }}</td>
-          <td>$ {{ transaction.priceUsd | numberFormat }}</td>
+          <td class="num-font">{{ transaction.amount | numberFormat }}</td>
+          <td class=" num-font body">$ {{ transaction.priceUsd | numberFormat }}</td>
           <td>
             <ng-container *ngIf="transaction.type === 'buy'; else sellIcon">
               <i class="fa-solid fa-cart-shopping" style="color: green"> +</i>
             </ng-container>
             <ng-template #sellIcon>
               <i class="fa-solid fa-money-bill-transfer" style="color: #840808">
-                ⚊</i
-              >
+                ⚊</i>
             </ng-template>
           </td>
-          <td>
+          <td class=" num-font body">
             $ {{ transaction.priceUsd / transaction.amount | numberFormat }}
           </td>
-          <td>$ {{ getCryptoLivePrice(transaction.id) | numberFormat }}</td>
-          <td>
-            <ng-container
-              *ngIf="
+          <td class=" num-font body">$ {{ getCryptoLivePrice(transaction.id) | numberFormat }}</td>
+          <td class=" num-font body">
+            <ng-container *ngIf="
                 (getCryptoLivePrice(transaction.id) /
                   (transaction.priceUsd / transaction.amount)) *
                   100 -
                   100 >=
                   0 && transaction.type === 'buy';
-              "
-            >
-              <span style="color: green"
-                >{{
-                  (getCryptoLivePrice(transaction.id) /
-                    (transaction.priceUsd / transaction.amount)) *
-                    100 -
-                    100 | numberFormat
-                }}%</span
-              >
+              ">
+              <span style="color: green">{{
+                (getCryptoLivePrice(transaction.id) /
+                (transaction.priceUsd / transaction.amount)) *
+                100 -
+                100 | numberFormat
+                }}%</span>
             </ng-container>
-            <ng-container
-              *ngIf="
+            <ng-container *ngIf="
                 (getCryptoLivePrice(transaction.id) /
                   (transaction.priceUsd / transaction.amount)) *
                   100 -
                   100 <
                   0 && transaction.type === 'buy';
-              "
-            >
-              <span style="color: #840808"
-                >{{
-                  (getCryptoLivePrice(transaction.id) /
-                    (transaction.priceUsd / transaction.amount)) *
-                    100 -
-                    100 | numberFormat
-                }}%</span
-              >
+              ">
+              <span style="color: #840808">{{
+                (getCryptoLivePrice(transaction.id) /
+                (transaction.priceUsd / transaction.amount)) *
+                100 -
+                100 | numberFormat
+                }}%</span>
             </ng-container>
-            <ng-container
-              *ngIf="
+            <ng-container *ngIf="
                 (getCryptoLivePrice(transaction.id) /
                   (transaction.priceUsd / transaction.amount)) *
                   100 -
                   100 >=
                   0 && transaction.type === 'sell';
-              "
-            >
-              <span style="color: #840808"
-                >{{
-                  (getCryptoLivePrice(transaction.id) /
-                    (transaction.priceUsd / transaction.amount)) *
-                    100 -
-                    100 | numberFormat
-                }}%</span
-              >
+              ">
+              <span style="color: #840808">{{
+                (getCryptoLivePrice(transaction.id) /
+                (transaction.priceUsd / transaction.amount)) *
+                100 -
+                100 | numberFormat
+                }}%</span>
             </ng-container>
-            <ng-container
-              *ngIf="
+            <ng-container *ngIf="
                 (getCryptoLivePrice(transaction.id) /
                   (transaction.priceUsd / transaction.amount)) *
                   100 -
                   100 <
                   0 && transaction.type === 'sell';
-              "
-            >
-              <span style="color: green"
-                >{{
-                  (getCryptoLivePrice(transaction.id) /
-                    (transaction.priceUsd / transaction.amount)) *
-                    100 -
-                    100 | numberFormat
-                }}%</span
-              >
+              ">
+              <span style="color: green">{{
+                (getCryptoLivePrice(transaction.id) /
+                (transaction.priceUsd / transaction.amount)) *
+                100 -
+                100 | numberFormat
+                }}%</span>
             </ng-container>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</body>
+</div>

@@ -28,7 +28,7 @@ div {
         }
         a {
           padding: 20px 40px;
-          background-color: #014cec;
+          background-color: var(--primary-c);
           text-decoration: none;
           color: white;
           font-weight: bold;
@@ -46,7 +46,7 @@ div {
     justify-content: center;
     align-items: center;
     h1 {
-      color: #014cec;
+      color: var(--primary-c);
       font-size: 30px;
       font-weight: bolder;
     }
@@ -56,5 +56,14 @@ div {
 @media screen and (max-width: 768px) {
   img {
     display: none;
+  }
+  div .home .get-started div a {
+    padding: 10px 20px;
+    background-color: var(--primary-c);
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
   }
 }

@@ -1,4 +1,4 @@
-<body>
+<div class="container">
   <div class="dashboard">
     <h1><i class="fa-solid fa-money-bill-transfer"></i></h1>
 
@@ -9,14 +9,14 @@
           <tr>
             <th>Name</th>
             <th>Amount</th>
-            <th>Action</th>
+            <th style="text-align: right;">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let crypto of user.crypto">
             <td>{{ crypto.id }}</td>
             <td>{{ crypto.cryptoAmount | numberFormat }}</td>
-            <td>
+            <td style="text-align: right;">
               <button (click)="openSellModal(crypto)">Sell</button>
             </td>
           </tr>
@@ -24,4 +24,4 @@
       </table>
     </div>
   </div>
-</body>
+</div>

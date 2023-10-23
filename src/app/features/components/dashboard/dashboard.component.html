@@ -5,30 +5,30 @@
     <table class="crypto-table">
       <thead>
         <tr>
-          <th>Rank</th>
+          <th class="head">Rank</th>
           <th>Name</th>
-          <th>Symbol</th>
+          <th class="head">Symbol</th>
           <th>Price (USD)</th>
-          <th>Market Cap (USD)</th>
-          <th>VWAP (24Hr)</th>
-          <th>Supply</th>
-          <th>Volume(24Hr)</th>
-          <th>Change(24Hr)</th>
+          <th class="head">Market Cap (USD)</th>
+          <th class="head">VWAP (24Hr)</th>
+          <th class="head">Supply</th>
+          <th class="head">Volume(24Hr)</th>
+          <th class="change">Change(24Hr)</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let crypto of paginatedCryptoData">
           <ng-container *ngIf="crypto.name.toLowerCase().includes(searchText.toLowerCase())">
-            <td>{{ crypto.rank }}</td>
+            <td class="body">{{ crypto.rank }}</td>
             <td>{{ crypto.name }}</td>
-            <td>{{ crypto.symbol }}</td>
+            <td class="body">{{ crypto.symbol }}</td>
             <td>$ {{ crypto.priceUsd | numberFormat }}</td>
-            <td>$ {{ crypto.marketCapUsd | numberFormat }}</td>
-            <td>$ {{ crypto.vwap24Hr | numberFormat }}</td>
-            <td>{{ crypto.supply | numberFormat }}</td>
-            <td>$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
-            <td [style.color]="
+            <td class="body">$ {{ crypto.marketCapUsd | numberFormat }}</td>
+            <td class="body">$ {{ crypto.vwap24Hr | numberFormat }}</td>
+            <td class="body">{{ crypto.supply | numberFormat }}</td>
+            <td class="body">$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
+            <td class="change" [style.color]="
                 crypto.changePercent24Hr >= 0 ? '#078807' : '#900000'
               ">
               <span *ngIf="crypto.changePercent24Hr > 0"><i class="fa-solid fa-arrow-up"></i></span>

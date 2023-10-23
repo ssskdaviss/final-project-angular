@@ -1,11 +1,11 @@
-body {
+
+body{
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   .login-form {
-    background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -20,7 +20,7 @@ body {
     }
 
     i {
-      color: $primary-c;
+      color: var(--primary-c);
       font-size: 20px;
     }
     label {
@@ -38,7 +38,7 @@ body {
     }
 
     button {
-      background-color: $primary-c;
+      background-color: var(--primary-c);
       color: #fff;
       border: none;
       border-radius: 4px;
@@ -48,7 +48,6 @@ body {
       margin-top: 20px;
 
       &:disabled {
-        background-color: #ccc;
         cursor: not-allowed;
       }
     }

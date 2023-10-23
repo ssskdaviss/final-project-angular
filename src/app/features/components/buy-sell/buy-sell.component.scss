@@ -10,7 +10,7 @@ div {
     padding: 20px;
     margin-top: 30px;
      th, td {
-      border-bottom: 2px solid $primary-c;
+      border-bottom: 2px solid var(--green-c);
     }
     .crypto-table {
       border-collapse: collapse;
@@ -24,24 +24,30 @@ div {
       font-weight: bolder;
       padding-bottom: 15px;
       margin: 0 auto;
-      color: $primary-c;
       margin-bottom: 30px;
+    }
+    i{
+      margin: 0 auto;
+      font-size: 35px;
+      margin-bottom: 10px;
+      color: var(--green-c);
+
     }
  
 
     .crypto-table th {
-      background-color: #f3f3f3;
       text-align: left;
       font-size: 18px;
       font-weight: bolder;
       margin-top: 20px;
       padding-bottom: 15px;
+
     }
 
     .crypto-table td {
       padding: 10px;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: bolder;
     }
 
     .crypto-table .name {
@@ -49,11 +55,11 @@ div {
     }
 
     .crypto-table .change {
-      color: $primary-c;
+      color: var(--green-c);
     }
 
     button {
-      background-color: $primary-c;
+      background-color: var(--green-c);
       color: #fff;
       border: none;
       padding: 10px 20px;
