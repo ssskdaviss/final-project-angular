@@ -1,9 +1,10 @@
 
-body{
+.login{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
   margin: 0;
   .login-form {
     border-radius: 4px;
@@ -31,7 +32,7 @@ body{
       input {
         width: 100%;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--primary-c);
         border-radius: 4px;
         font-size: 16px;
       }

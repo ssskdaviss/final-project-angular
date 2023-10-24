@@ -14,13 +14,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let crypto of filterCryptoData()">
-          <td class="num-font name">{{ crypto.name }}</td>
-          <td class="num-font " >$ {{ crypto.priceUsd | numberFormat }}</td>
-          <td class="num-font change" [style.color]="
+          <td class=" name">{{ crypto.name }}</td>
+          <td class=" " >$ {{ crypto.priceUsd | numberFormat }}</td>
+          <td class=" change" [style.color]="
             crypto.changePercent24Hr >= 0 ? '#078807' : '#900000'">
             {{ crypto.changePercent24Hr | numberFormat }} %
           </td>
-          <td  class="num-font " align="right"><button (click)="openBuyModal(crypto)">Buy</button></td>
+          <td style="text-align: right;" align="right"><button (click)="openBuyModal(crypto)">Buy</button></td>
         </tr>
       </tbody>
     </table>

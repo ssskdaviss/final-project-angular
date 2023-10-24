@@ -1,13 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { User } from 'src/app/core/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
-import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
+import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 @Component({
   selector: 'app-user-profile',
   standalone: true,

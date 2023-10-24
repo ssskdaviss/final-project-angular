@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
-import { CryptoData, CryptoResponse } from '../core/interfaces/interfaces';
-import { CryptoHistoryResponse } from '../core/interfaces/interfaces';
+import { CryptoData, CryptoResponse } from '../../core/interfaces/interfaces';
+import { CryptoHistoryResponse } from '../../core/interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CryptoService {
   constructor(private http: HttpClient) {}
-
-//conditional  rendering
 
   
   fetchCryptoData(): Observable<CryptoResponse> {

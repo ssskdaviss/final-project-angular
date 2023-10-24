@@ -17,7 +17,7 @@ import { User, cryptoInterface } from 'src/app/core/interfaces/interfaces';
 import {
   NumberFormatPipe,
   StringToNumberPipe,
-} from '../../shared/number-format.pipe';
+} from '../../shared/pipes/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

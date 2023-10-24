@@ -5,7 +5,7 @@
       "password": "paroli123",
       "nickname": "giga",
       "phoneNumber": "+995555555555",
-      "balance": 921.7008488726907,
+      "balance": 854.4792839986227,
       "cardInfo": {
         "cardNumber": "3232323232323232",
         "expirationDate": "12/26",
@@ -13,24 +13,16 @@
       },
       "crypto": [
         {
-          "id": "avalanche",
-          "cryptoAmount": 1.0730899879124163
-        },
-        {
           "id": "xrp",
-          "cryptoAmount": 160.3695715237248
-        },
-        {
-          "id": "injective-protocol",
-          "cryptoAmount": 0.9703515533711268
+          "cryptoAmount": 140.3695715237248
         },
         {
           "id": "fei-protocol",
-          "cryptoAmount": 99.65352716589166
+          "cryptoAmount": 79.65352716589166
         },
         {
           "id": "bitcoin",
-          "cryptoAmount": 0.0006414414222769945
+          "cryptoAmount": 0.0015101859470405563
         },
         {
           "id": "litecoin",
@@ -39,9 +31,179 @@
         {
           "id": "multi-collateral-dai",
           "cryptoAmount": 9.995837439989907
+        },
+        {
+          "id": "polkadot",
+          "cryptoAmount": 2.325994840330095
+        },
+        {
+          "id": "stellar",
+          "cryptoAmount": 86.68050077078962
+        },
+        {
+          "id": "uniswap",
+          "cryptoAmount": 2.2875400810849924
+        },
+        {
+          "id": "lido-dao",
+          "cryptoAmount": 5.484275825102326
+        },
+        {
+          "id": "near-protocol",
+          "cryptoAmount": 17.40169585478944
         }
       ],
       "history": [
+        {
+          "id": "fei-protocol",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 9.453297249748712
+        },
+        {
+          "id": "fei-protocol",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 9.910792814940283
+        },
+        {
+          "id": "solana",
+          "type": "sell",
+          "amount": 0.31765935691916997,
+          "priceUsd": 10.13114889378749
+        },
+        {
+          "id": "injective-protocol",
+          "type": "sell",
+          "amount": 0.9703515533711268,
+          "priceUsd": 12.305699616003071
+        },
+        {
+          "id": "theta",
+          "type": "sell",
+          "amount": 15.002778889708917,
+          "priceUsd": 10.027976667907492
+        },
+        {
+          "id": "near-protocol",
+          "type": "buy",
+          "amount": 8.62724356469771,
+          "priceUsd": 10
+        },
+        {
+          "id": "theta",
+          "type": "buy",
+          "amount": 15.002778889708917,
+          "priceUsd": 10
+        },
+        {
+          "id": "aave",
+          "type": "sell",
+          "amount": 0.11641619781744189,
+          "priceUsd": 10.037207963415801
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002895750010592871,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002895847618521374,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002895847618521374,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0,
+          "priceUsd": 0
+        },
+        {
+          "id": "quant",
+          "type": "buy",
+          "amount": 0.10289807249180447,
+          "priceUsd": 10
+        },
+        {
+          "id": "aave",
+          "type": "buy",
+          "amount": 0.11641619781744189,
+          "priceUsd": 10
+        },
+        {
+          "id": "near-protocol",
+          "type": "buy",
+          "amount": 8.77445229009173,
+          "priceUsd": 10
+        },
+        {
+          "id": "lido-dao",
+          "type": "buy",
+          "amount": 5.484275825102326,
+          "priceUsd": 10
+        },
+        {
+          "id": "uniswap",
+          "type": "buy",
+          "amount": 2.2875400810849924,
+          "priceUsd": 10
+        },
+        {
+          "id": "stellar",
+          "type": "buy",
+          "amount": 86.68050077078962,
+          "priceUsd": 10
+        },
+        {
+          "id": "avalanche",
+          "type": "buy",
+          "amount": 0.9392292651266902,
+          "priceUsd": 10
+        },
+        {
+          "id": "polkadot",
+          "type": "buy",
+          "amount": 2.325994840330095,
+          "priceUsd": 10
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 5.457406631067699
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 5.454905289061625
+        },
+        {
+          "id": "avalanche",
+          "type": "sell",
+          "amount": 0,
+          "priceUsd": 0
+        },
+        {
+          "id": "solana",
+          "type": "buy",
+          "amount": 0,
+          "priceUsd": 0
+        },
+        {
+          "id": "solana",
+          "type": "buy",
+          "amount": 0.31765935691916997,
+          "priceUsd": 10
+        },
         {
           "id": "multi-collateral-dai",
           "type": "buy",
@@ -146,6 +308,154 @@
         }
       ],
       "id": 1
+    },
+    {
+      "email": "john@mail.com",
+      "password": "12345678",
+      "nickname": "john",
+      "phoneNumber": "+995567567567",
+      "balance": 1730.0032099076025,
+      "cardInfo": {
+        "cardNumber": "1234567890123456",
+        "expirationDate": "12/25",
+        "cvc": "123"
+      },
+      "crypto": [
+        {
+          "id": "bitcoin",
+          "cryptoAmount": 0.0008794669219275308
+        },
+        {
+          "id": "ethereum",
+          "cryptoAmount": 0.005500793708540044
+        },
+        {
+          "id": "tether",
+          "cryptoAmount": 4.993751002943368
+        }
+      ],
+      "history": [
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002932789176423231,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002932789176423231,
+          "priceUsd": 10
+        },
+        {
+          "id": "tether",
+          "type": "sell",
+          "amount": 5,
+          "priceUsd": 5.003209907602528
+        },
+        {
+          "id": "tether",
+          "type": "buy",
+          "amount": 9.993751002943368,
+          "priceUsd": 10
+        },
+        {
+          "id": "ethereum",
+          "type": "buy",
+          "amount": 0.005500793708540044,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002929090866428846,
+          "priceUsd": 10
+        }
+      ],
+      "id": 2
+    },
+    {
+      "email": "giga1@mail.com",
+      "password": "paroli123",
+      "nickname": "gia",
+      "phoneNumber": "+995111111111",
+      "balance": 652.328475058531,
+      "cardInfo": {
+        "cardNumber": "1111111111111111",
+        "expirationDate": "12/11",
+        "cvc": "661"
+      },
+      "crypto": [
+        {
+          "id": "holo",
+          "cryptoAmount": 370069.59223955387
+        },
+        {
+          "id": "monero",
+          "cryptoAmount": 3.140735052504645
+        },
+        {
+          "id": "xrp",
+          "cryptoAmount": 347.1355100533559
+        }
+      ],
+      "history": [
+        {
+          "id": "xrp",
+          "type": "buy",
+          "amount": 347.1355100533559,
+          "priceUsd": 200
+        },
+        {
+          "id": "ethereum",
+          "type": "sell",
+          "amount": 0.00546935316906615,
+          "priceUsd": 9.98878441535629
+        },
+        {
+          "id": "ethereum",
+          "type": "buy",
+          "amount": 0.00546935316906615,
+          "priceUsd": 10
+        },
+        {
+          "id": "conflux-network",
+          "type": "sell",
+          "amount": 645.1998345418226,
+          "priceUsd": 99.21879251163853
+        },
+        {
+          "id": "monero",
+          "type": "buy",
+          "amount": 3.140735052504645,
+          "priceUsd": 500
+        },
+        {
+          "id": "holo",
+          "type": "buy",
+          "amount": 370069.59223955387,
+          "priceUsd": 500
+        },
+        {
+          "id": "conflux-network",
+          "type": "buy",
+          "amount": 645.1998345418226,
+          "priceUsd": 100
+        },
+        {
+          "id": "mina",
+          "type": "sell",
+          "amount": 115.10114033969975,
+          "priceUsd": 100.12089813153615
+        },
+        {
+          "id": "mina",
+          "type": "buy",
+          "amount": 115.10114033969975,
+          "priceUsd": 100
+        }
+      ],
+      "id": 3
     }
   ]
 }

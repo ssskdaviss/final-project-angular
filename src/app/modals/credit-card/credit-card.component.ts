@@ -30,6 +30,7 @@ export class CreditCardComponent {
     private router: Router,
     private dialogRef: MatDialogRef<CreditCardComponent> //close modal
   ) {
+    
     this.cardInfoForm = this.fb.group({
       cardNumber: ['' ,[Validators.required, this.cardNumberValidator]],
       expirationDate: ['' ,[Validators.required, this.expirationDateValidator],

@@ -11,7 +11,7 @@
       <tr class="head">
         <td></td>
         <td>Balance:</td>
-        <td class="num-font">{{ user.balance | numberFormat }} $</td>
+        <td >{{ user.balance | numberFormat }} $</td>
       </tr>
       <tr class="head">
         <td></td>
@@ -21,7 +21,7 @@
       <tr *ngFor="let crypto of user.crypto">
         <td></td>
         <td class="crypto-key">{{ crypto.id }}:</td>
-        <td class="crypto-value num-font">{{ crypto.cryptoAmount | numberFormat }}</td>
+        <td class="crypto-value ">{{ crypto.cryptoAmount | numberFormat }}</td>
       </tr>
     </table>
   </div>

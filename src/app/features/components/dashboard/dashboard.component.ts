@@ -4,10 +4,10 @@ import {
   Component,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CryptoService } from 'src/app/services/crypto.service';
+import { CryptoService } from 'src/app/shared/services/crypto.service';
 import { CryptoData } from 'src/app/core/interfaces/interfaces';
 import { FormsModule } from '@angular/forms';
-import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
+import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({

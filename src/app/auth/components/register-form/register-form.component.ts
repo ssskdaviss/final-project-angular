@@ -56,7 +56,11 @@ export class RegisterFormComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if(localStorage.getItem('email')){
+      this.router.navigate(['/home'])
+    }
+   }
 
   public editingIndex: number | null = null;
 

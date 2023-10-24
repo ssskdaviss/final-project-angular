@@ -33,20 +33,20 @@ div {
     th,
     td {
       padding: 12px;
-      text-align: left;
+      text-align: start;
       border-bottom: 1px solid var(--primary-c);
     }
 
     th {
       color: var(--primary-c);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bolder;
+      white-space: nowrap;
     }
 
     td {
       color: black;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 16px;
     }
   }
 

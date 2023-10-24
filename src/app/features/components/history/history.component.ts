@@ -2,10 +2,10 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoData, User, } from 'src/app/core/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
-import { NumberFormatPipe } from 'src/app/shared/number-format.pipe';
+import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ActivatedRoute } from '@angular/router';
-import { CryptoService } from 'src/app/services/crypto.service';
+import { CryptoService } from 'src/app/shared/services/crypto.service';
 @Component({
   selector: 'app-history',
   standalone: true,

@@ -9,9 +9,13 @@ div {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     th,
     td {
-      border-bottom: 2px solid var(--green-c);
+      text-align: left;
+      border-bottom: 1px solid var(--primary-c);
     }
     .crypto-table {
       border-collapse: collapse;
@@ -25,7 +29,8 @@ div {
       height: 30px;
       margin-bottom: 15px;
       border-radius: 5px;
-      border: 2px var(--green-c) solid;
+      border: 1px var(--primary-c) solid;
+      padding: 8px;
     }
 
     h1 {
@@ -39,7 +44,7 @@ div {
       margin: 0 auto;
       font-size: 35px;
       margin-bottom: 10px;
-      color: var(--green-c);
+      color: var(--primary-c);
     }
 
     .crypto-table th {

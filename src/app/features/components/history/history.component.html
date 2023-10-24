@@ -19,8 +19,8 @@
           <td>
             <b>{{ transaction.id }}</b>
           </td>
-          <td class="num-font">{{ transaction.amount | numberFormat }}</td>
-          <td class=" num-font body">$ {{ transaction.priceUsd | numberFormat }}</td>
+          <td >{{ transaction.amount | numberFormat }}</td>
+          <td class=" body">$ {{ transaction.priceUsd | numberFormat }}</td>
           <td>
             <ng-container *ngIf="transaction.type === 'buy'; else sellIcon">
               <i class="fa-solid fa-cart-shopping" style="color: green"> +</i>
@@ -30,11 +30,11 @@
                 ⚊</i>
             </ng-template>
           </td>
-          <td class=" num-font body">
+          <td class="  body">
             $ {{ transaction.priceUsd / transaction.amount | numberFormat }}
           </td>
-          <td class=" num-font body">$ {{ getCryptoLivePrice(transaction.id) | numberFormat }}</td>
-          <td class=" num-font body">
+          <td class="  body">$ {{ getCryptoLivePrice(transaction.id) | numberFormat }}</td>
+          <td class=" body">
             <ng-container *ngIf="
                 (getCryptoLivePrice(transaction.id) /
                   (transaction.priceUsd / transaction.amount)) *
@@ -42,7 +42,7 @@
                   100 >=
                   0 && transaction.type === 'buy';
               ">
-              <span style="color: green">{{
+              <span  style="color: green">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -56,7 +56,7 @@
                   100 <
                   0 && transaction.type === 'buy';
               ">
-              <span style="color: #840808">{{
+              <span  style="color: #840808">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -70,7 +70,7 @@
                   100 >=
                   0 && transaction.type === 'sell';
               ">
-              <span style="color: #840808">{{
+              <span  style="color: #840808">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -84,7 +84,7 @@
                   100 <
                   0 && transaction.type === 'sell';
               ">
-              <span style="color: green">{{
+              <span  style="color: green">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -

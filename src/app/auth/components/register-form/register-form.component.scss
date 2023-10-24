@@ -1,10 +1,12 @@
 
-body {
+.register-cont {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
   margin: 0;
+
   .register {
     border-radius: 8px;
     padding: 20px;
@@ -30,7 +32,7 @@ body {
       input {
         width: 100%;
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--primary-c);
         border-radius: 4px;
         font-size: 16px;
       }

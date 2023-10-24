@@ -26,7 +26,11 @@ export class LoginComponent {
   ) { }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if(localStorage.getItem('email')){
+      this.router.navigate(['/home'])
+    }
+   }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
@@ -44,8 +48,7 @@ export class LoginComponent {
             localStorage.setItem('password', authenticatedUser.password);
             localStorage.setItem('userId', authenticatedUser.id);
             this.cdr.markForCheck();
-            this.router.navigate(['/home']);
-
+            window.location.href="/home"
           } else {
             alert('Login failed: Invalid credentials');
           }

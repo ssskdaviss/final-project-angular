@@ -1,25 +1,13 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
-import {
-  MatDialog,
-  MatDialogModule,
-  MatDialogRef,
-} from '@angular/material/dialog';
+import {ChangeDetectionStrategy,ChangeDetectorRef,Component,EventEmitter,Input,OnInit,Output,} from '@angular/core';
+import {MatDialog,MatDialogModule,MatDialogRef,} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { CreditCardComponent } from '../modals/credit-card/credit-card.component';
 import { Router } from '@angular/router';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { CryptoService } from '../services/crypto.service';
+import { CryptoService } from '../shared/services/crypto.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../core/interfaces/interfaces';
-import { NumberFormatPipe } from '../shared/number-format.pipe';
+import { NumberFormatPipe } from '../shared/pipes/number-format.pipe';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -78,7 +66,6 @@ export class NavbarComponent implements OnInit{
       localStorage.removeItem('password');
       localStorage.removeItem('userId');
       this.router.navigate(['/home']);
-
     }
   }
   userIsLoggedIn(): boolean {
