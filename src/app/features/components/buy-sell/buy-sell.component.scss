@@ -48,9 +48,11 @@ div {
     }
 
     .crypto-table th {
-      text-align: left;
+      color: var(--primary-c);
       font-size: 18px;
       font-weight: bolder;
+      white-space: nowrap;
+      text-align: left;
       margin-top: 20px;
       padding-bottom: 15px;
     }
@@ -58,7 +60,6 @@ div {
     .crypto-table td {
       padding: 10px;
       font-size: 16px;
-      font-weight: bolder;
     }
 
     .crypto-table .name {
@@ -81,25 +82,35 @@ div {
 }
 
 @media screen and (max-width: 768px) {
-  .change {
-    display: none;
-  }
-  .change-th {
-    display: none;
-  }
-  h1 {
-    font-size: 20px;
-    font-weight: bolder;
-  }
-  .crypto-table th {
-    font-size: 10px;
-  }
+  div {
+    margin-top: 25px;
 
-  .crypto-table td {
-    font-size: 8px;
-  }
-  body .dashboard button {
-    border: none;
-    padding: 5px 10px;
+    .dashboard {
+      padding: 4px;
+
+      .crypto-table th {
+        font-size: 12px;
+      }
+      .change {
+        display: none;
+      }
+      .change-th {
+        display: none;
+      }
+
+      .crypto-table td {
+        padding: 5px;
+        font-size: 12px;
+      }
+
+      button {
+        background-color: var(--green-c);
+        color: #fff;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
   }
 }

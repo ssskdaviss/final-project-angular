@@ -1,18 +1,5 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-} from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-  FormControl,
-  ValidationErrors,
-  AbstractControl,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy, } from '@angular/core';
+import { FormBuilder, Validators, FormControl, ValidationErrors, ReactiveFormsModule, } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
@@ -57,10 +44,10 @@ export class RegisterFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('email')){
+    if (localStorage.getItem('email')) {
       this.router.navigate(['/home'])
     }
-   }
+  }
 
   public editingIndex: number | null = null;
 

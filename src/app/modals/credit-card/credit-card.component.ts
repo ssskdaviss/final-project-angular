@@ -1,11 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
 import { FormControl } from '@angular/forms';
@@ -30,12 +25,12 @@ export class CreditCardComponent {
     private router: Router,
     private dialogRef: MatDialogRef<CreditCardComponent> //close modal
   ) {
-    
+
     this.cardInfoForm = this.fb.group({
-      cardNumber: ['' ,[Validators.required, this.cardNumberValidator]],
-      expirationDate: ['' ,[Validators.required, this.expirationDateValidator],
+      cardNumber: ['', [Validators.required, this.cardNumberValidator]],
+      expirationDate: ['', [Validators.required, this.expirationDateValidator],
       ],
-      cvc: ['' ,[Validators.required, this.cvcValidator]],
+      cvc: ['', [Validators.required, this.cvcValidator]],
     });
   }
 

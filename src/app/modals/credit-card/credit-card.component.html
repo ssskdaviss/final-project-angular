@@ -1,40 +1,30 @@
 <form [formGroup]="cardInfoForm" (ngSubmit)="onSubmit()">
-  <label for="cardNumber"
-    >Card Number
+  <label for="cardNumber">Card Number
     <input type="text" formControlName="cardNumber" placeholder="16 Digits" />
   </label>
-  <div
-    *ngIf="
+  <div *ngIf="
       cardInfoForm.get('cardNumber')?.hasError('invalidCardNumber') &&
       cardInfoForm.get('cardNumber')?.touched
-    "
-    class="text-danger"
-  >
+    " class="text-danger">
     Invalid card number. Please enter a 16-digit number.
   </div>
-  <label for="expirationDate"
-    >Expiration Date
+  <label for="expirationDate">Expiration Date
     <input type="text" formControlName="expirationDate" placeholder="(mm/yy)" />
   </label>
-  <div
-    *ngIf="
+  <div *ngIf="
       cardInfoForm.get('expirationDate')?.hasError('invalidExpirationDate') &&
       cardInfoForm.get('expirationDate')?.touched
-    "
-  >
+    ">
     Invalid expiration date. Please enter a date in the mm/yy format.
   </div>
 
-  <label for="cvc"
-    >CVC
+  <label for="cvc">CVC
     <input type="text" formControlName="cvc" placeholder="3 Digits" />
   </label>
-  <div
-    *ngIf="
+  <div *ngIf="
       cardInfoForm.get('cvc')?.hasError('invalidCVC') &&
       cardInfoForm.get('cvc')?.touched
-    "
-  >
+    ">
     Invalid CVC. Please enter a 3-digit number.
   </div>
 

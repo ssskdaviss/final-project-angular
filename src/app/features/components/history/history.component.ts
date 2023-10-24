@@ -4,7 +4,6 @@ import { CryptoData, User, } from 'src/app/core/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ActivatedRoute } from '@angular/router';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
 @Component({
   selector: 'app-history',
@@ -54,12 +53,12 @@ export class HistoryComponent implements OnInit {
     );
   }
 
-  public getCryptoLivePrice(id: string): number{
+  public getCryptoLivePrice(id: string): number {
     let index = this.cryptoData.findIndex((object) => object.id === id)
     if (index === -1) return 0
     return this.cryptoData[index].priceUsd
   }
-  
-  
+
+
 }
 

@@ -1,9 +1,9 @@
-<nav >
+<nav>
   <div class="container">
     <div class="home">
       <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
         <img src="../../assets/images/logo.svg" alt="">
-  
+
       </a>
     </div>
     <ul class="middle-ul">
@@ -42,8 +42,8 @@
     <div class="right right-button-container">
       <ul class="right-ul">
         <li *ngIf="userIsLoggedIn()">
-          <div class="accaunt" *ngIf="user">           
-            <i class="fa-solid fa-dollar-sign"></i> {{ user.balance | numberFormat }} 
+          <div class="accaunt" *ngIf="user">
+            <i class="fa-solid fa-dollar-sign"></i> {{ user.balance | numberFormat }}
           </div>
         </li>
         <li *ngIf="!userIsLoggedIn()">
@@ -70,7 +70,7 @@
         <li *ngIf="userIsLoggedIn()">
           <div class="credit-card">
             <button (click)="openCardModal()">
-              Credit Card
+              Add Card
             </button>
           </div>
         </li>

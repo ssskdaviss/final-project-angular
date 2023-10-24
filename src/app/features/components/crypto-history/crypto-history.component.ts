@@ -1,14 +1,6 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  ChangeDetectorRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef, } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  CryptoHistoryData,
-  CryptoHistoryResponse,
-} from 'src/app/core/interfaces/interfaces';
+import { CryptoHistoryData, CryptoHistoryResponse, } from 'src/app/core/interfaces/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
 import Chart from 'chart.js/auto';
@@ -31,7 +23,7 @@ export class CryptoHistoryComponent implements OnInit {
     private route: ActivatedRoute,
     private cryptoService: CryptoService,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

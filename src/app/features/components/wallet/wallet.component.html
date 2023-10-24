@@ -15,13 +15,13 @@
         </thead>
         <tbody>
           <tr *ngFor="let crypto of user.crypto">
-            <td>{{ crypto.id }}</td>
+            <td><b>{{ crypto.id }}</b></td>
             <td>{{ crypto.cryptoAmount | numberFormat }}</td>
-            <td >
+            <td>
               <button (click)="openSellModal(crypto)">Sell</button>
             </td>
             <td style="text-align: right;">
-                <button (click)="sellCrypto(crypto.id,crypto.cryptoAmount)">Sell All</button>
+              <button (click)="sellCrypto(crypto.id,crypto.cryptoAmount)">Sell All</button>
             </td>
           </tr>
         </tbody>

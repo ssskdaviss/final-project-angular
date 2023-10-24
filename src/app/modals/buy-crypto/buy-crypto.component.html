@@ -2,20 +2,12 @@
   <button (click)="closeBuyModal()">X</button>
   <p>{{ crypto.id }}</p>
   <label for="usd">USD </label>
-  <input
-    [(ngModel)]="usdAmount"
-    name="usdAmount"
-    [ngModelOptions]="{ standalone: true }"
-    type="number"
-    min="10"
-    max="5000"
-  />
+  <input [(ngModel)]="usdAmount" name="usdAmount" [ngModelOptions]="{ standalone: true }" type="number" min="10"
+    max="5000" />
   <p>Balance: ${{ userBalance | numberFormat }}</p>
   <p>Price: ${{ crypto.priceUsd | numberFormat }}</p>
-  <label for="cryptoAmount"
-    >Amount:
-    {{ (usdAmount | strToNum) / crypto.priceUsd | numberFormat }}</label
-  >
+  <label for="cryptoAmount">Amount:
+    {{ (usdAmount | strToNum) / crypto.priceUsd | numberFormat }}</label>
   <br />
   <button type="submit">Buy</button>
 </form>

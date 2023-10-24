@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
-import { CryptoData, cryptoInterface, } from 'src/app/core/interfaces/interfaces';
+import { CryptoData, } from 'src/app/core/interfaces/interfaces';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
-import { Router, RouterLink } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { BuyCryptoComponent } from 'src/app/modals/buy-crypto/buy-crypto.component';
 import { FormsModule } from '@angular/forms';
@@ -56,7 +55,7 @@ export class BuySellComponent {
       console.log('The dialog was closed');
     });
   }
-  
+
   getChangeTextClass(changePercent: number): string {
     return changePercent < 0 ? 'red-text' : 'green-text';
   }

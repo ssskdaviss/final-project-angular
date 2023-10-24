@@ -68,12 +68,14 @@ nav {
   }
 }
 
-.nav-pad{
+.nav-pad {
   height: 70px;
 }
 
 @media screen and (max-width: 920px) {
-  .nav-pad{height: 150px;}
+  .nav-pad {
+    height: 150px;
+  }
   nav {
     .right-ul {
       display: flex;

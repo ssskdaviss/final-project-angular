@@ -29,7 +29,7 @@ export class WalletComponent implements OnInit {
     private cd: ChangeDetectorRef,
     private router: Router,
     private cryptoService: CryptoService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');

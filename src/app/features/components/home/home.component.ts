@@ -10,12 +10,12 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   ngOnInit(): void {
-    
+
   }
 
-  reloadPage(){
+  reloadPage() {
     location.reload()
   }
 }

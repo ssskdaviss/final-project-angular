@@ -58,7 +58,7 @@ export const routes: Routes = [
       canActivate: [AuthGuard]
    
   } ,
-  { path: 'crypto/:id/history', component: CryptoHistoryComponent,canActivate: [AuthGuard]},
+  { path: 'crypto/:id/history', component: CryptoHistoryComponent},
 ];
 
 

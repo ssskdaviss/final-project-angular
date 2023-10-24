@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
 import { CryptoData } from 'src/app/core/interfaces/interfaces';
@@ -27,7 +23,7 @@ export class DashboardComponent {
   constructor(
     private cryptoService: CryptoService,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.fetchCryptoData();

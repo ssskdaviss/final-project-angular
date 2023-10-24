@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <i class="fa-solid fa-money-bills"></i> 
+    <i class="fa-solid fa-money-bills"></i>
     <h1>User Transaction History</h1>
     <table>
       <thead>
@@ -19,7 +19,7 @@
           <td>
             <b>{{ transaction.id }}</b>
           </td>
-          <td >{{ transaction.amount | numberFormat }}</td>
+          <td>{{ transaction.amount | numberFormat }}</td>
           <td class=" body">$ {{ transaction.priceUsd | numberFormat }}</td>
           <td>
             <ng-container *ngIf="transaction.type === 'buy'; else sellIcon">
@@ -42,7 +42,7 @@
                   100 >=
                   0 && transaction.type === 'buy';
               ">
-              <span  style="color: green">{{
+              <span style="color: green">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -56,7 +56,7 @@
                   100 <
                   0 && transaction.type === 'buy';
               ">
-              <span  style="color: #840808">{{
+              <span style="color: #840808">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -70,7 +70,7 @@
                   100 >=
                   0 && transaction.type === 'sell';
               ">
-              <span  style="color: #840808">{{
+              <span style="color: #840808">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -
@@ -84,7 +84,7 @@
                   100 <
                   0 && transaction.type === 'sell';
               ">
-              <span  style="color: green">{{
+              <span style="color: green">{{
                 (getCryptoLivePrice(transaction.id) /
                 (transaction.priceUsd / transaction.amount)) *
                 100 -

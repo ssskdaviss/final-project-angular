@@ -15,7 +15,7 @@
       <tbody>
         <tr *ngFor="let crypto of filterCryptoData()">
           <td class=" name">{{ crypto.name }}</td>
-          <td class=" " >$ {{ crypto.priceUsd | numberFormat }}</td>
+          <td class=" ">$ {{ crypto.priceUsd | numberFormat }}</td>
           <td class=" change" [style.color]="
             crypto.changePercent24Hr >= 0 ? '#078807' : '#900000'">
             {{ crypto.changePercent24Hr | numberFormat }} %
