@@ -101,3 +101,36 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  .nav-pad {
+    height: 150px;
+  }
+  nav {
+    .right-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .middle-ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 90px;
+    }
+
+    .right-button-container a,
+    .right-button-container button {
+      padding: 1px 2px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 8px;
+    }
+  }
+}
