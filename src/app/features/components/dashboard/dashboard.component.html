@@ -9,12 +9,12 @@
           <th>Name</th>
           <th class="head">Symbol</th>
           <th>Price</th>
-          <th class="head">Market Cap</th>
+          <th class="market-cap">Market Cap</th>
           <th class="head">VWAP(24Hr)</th>
           <th class="head">Supply</th>
           <th class="head">Volume(24Hr)</th>
           <th class="change">Change(24Hr)</th>
-          <th style="text-align: right; padding-right: 8px;">Charts</th>
+          <th class="chart" style="text-align: right; padding-right: 8px;">Charts</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
             <td><b>{{ crypto.name }}</b></td>
             <td class="body">{{ crypto.symbol }}</td>
             <td>$ {{ crypto.priceUsd | numberFormat }}</td>
-            <td class="body">$ {{ crypto.marketCapUsd | numberFormat }}</td>
+            <td class="market-cap">$ {{ crypto.marketCapUsd | numberFormat }}</td>
             <td class="body">$ {{ crypto.vwap24Hr | numberFormat }}</td>
             <td class="body">{{ crypto.supply | numberFormat }}</td>
             <td class="body">$ {{ crypto.volumeUsd24Hr | numberFormat }}</td>
@@ -36,7 +36,7 @@
               <span *ngIf="crypto.changePercent24Hr === 0">|</span>
               {{ crypto.changePercent24Hr | numberFormat }} %
             </td>
-            <td style="text-align:right" align="right">
+            <td class="chart" style="text-align:right" align="right">
               <a [routerLink]="['/crypto', crypto.id, 'history']"><i class="fa-solid fa-chart-line"></i></a>
             </td>
           </ng-container>

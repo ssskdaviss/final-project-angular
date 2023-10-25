@@ -1,5 +1,5 @@
+<button class="exit" (click)="closeBuyModal()">X</button>
 <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
-  <!-- <button (click)="closeBuyModal()">X</button> -->
   <p><b>{{ crypto.id }}</b></p>
   <label for="usd">USD </label>
   <input [(ngModel)]="usdAmount" name="usdAmount" [ngModelOptions]="{ standalone: true }" type="number" min="10"

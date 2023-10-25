@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoData, User, } from 'src/app/core/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,8 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
   standalone: true,
   imports: [CommonModule, NumberFormatPipe, NgxPaginationModule],
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  styleUrls: ['./history.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HistoryComponent implements OnInit {
   user: User | null = null;

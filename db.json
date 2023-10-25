@@ -930,17 +930,13 @@
       "password": "12345678",
       "nickname": "nick",
       "phoneNumber": "+995555555555",
-      "balance": 808.9784050373861,
+      "balance": 728.6041070285397,
       "cardInfo": {
         "cardNumber": "1234567891234567",
         "expirationDate": "12/22",
         "cvc": "123"
       },
       "crypto": [
-        {
-          "id": "shiba-inu",
-          "cryptoAmount": 1266466.2779076756
-        },
         {
           "id": "polygon",
           "cryptoAmount": 6.040242766943013
@@ -951,26 +947,118 @@
         },
         {
           "id": "bitcoin",
-          "cryptoAmount": 0.000586577091313877
+          "cryptoAmount": 0.0014504803581792216
         },
         {
           "id": "ethereum",
-          "cryptoAmount": 0.005624887772467563
+          "cryptoAmount": 0.011217670301848436
         },
         {
           "id": "tether",
-          "cryptoAmount": 9.997713827725615
+          "cryptoAmount": 19.991893372465256
         },
         {
           "id": "binance-coin",
-          "cryptoAmount": 0.04445028074259595
+          "cryptoAmount": 0.13344277973535607
         },
         {
           "id": "usd-coin",
           "cryptoAmount": 9.998272197156991
+        },
+        {
+          "id": "chainlink",
+          "cryptoAmount": 0.8937800353641991
+        },
+        {
+          "id": "xrp",
+          "cryptoAmount": 18.11021461285713
         }
       ],
       "history": [
+        {
+          "id": "tether",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.004356707004174
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00028631129992506734,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00028631129992506734,
+          "priceUsd": 10
+        },
+        {
+          "id": "tether",
+          "type": "buy",
+          "amount": 9.996301337180892,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029128066701521,
+          "priceUsd": 10
+        },
+        {
+          "id": "solana",
+          "type": "sell",
+          "amount": 0.30813272652844576,
+          "priceUsd": 10.259580314612919
+        },
+        {
+          "id": "solana",
+          "type": "buy",
+          "amount": 0.30813272652844576,
+          "priceUsd": 10
+        },
+        {
+          "id": "binance-coin",
+          "type": "buy",
+          "amount": 0.044496249496380064,
+          "priceUsd": 10
+        },
+        {
+          "id": "xrp",
+          "type": "buy",
+          "amount": 18.11021461285713,
+          "priceUsd": 10
+        },
+        {
+          "id": "binance-coin",
+          "type": "buy",
+          "amount": 0.044496249496380064,
+          "priceUsd": 10
+        },
+        {
+          "id": "tether",
+          "type": "buy",
+          "amount": 9.997878207558749,
+          "priceUsd": 10
+        },
+        {
+          "id": "ethereum",
+          "type": "buy",
+          "amount": 0.005592782529380873,
+          "priceUsd": 10
+        },
+        {
+          "id": "chainlink",
+          "type": "buy",
+          "amount": 0.8937800353641991,
+          "priceUsd": 10
+        },
+        {
+          "id": "shiba-inu",
+          "type": "sell",
+          "amount": 1266466.2779076756,
+          "priceUsd": 9.361764969536624
+        },
         {
           "id": "shiba-inu",
           "type": "sell",

@@ -90,7 +90,7 @@ div {
   }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1245px) {
   .head{
     display: none;
   }
@@ -98,8 +98,14 @@ div {
     display: none;
   }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 680px) {
  .change{
+  display: none;
+ }
+ .chart{
+  display: none;
+ }
+ .market-cap{
   display: none;
  }
 }

@@ -111,7 +111,7 @@ export class BuyCryptoComponent {
     
 
   }
-  // closeBuyModal(): void {
-  //   this.dialogRef.close();
-  // }
+  closeBuyModal(): void {
+    this.dialogRef.close();
+  }
 }

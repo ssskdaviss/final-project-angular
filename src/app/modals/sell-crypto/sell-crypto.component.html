@@ -1,5 +1,5 @@
+<button class="exit" (click)="closeSellModal()">X</button>
 <form [formGroup]="sellForm" (ngSubmit)="onSubmit()">
-  <!-- <button (click)="closeSellModal()">X</button> -->
   <p><b>{{ crypto.id }}</b></p>
   <p>Balance: ${{ userBalance | numberFormat }}</p>
   <label for="usd">Amount</label>

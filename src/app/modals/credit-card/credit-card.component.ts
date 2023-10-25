@@ -79,4 +79,7 @@ export class CreditCardComponent {
     }
     return null;
   }
+  closeCardModal(): void {
+    this.dialogRef.close();
+  }
 }

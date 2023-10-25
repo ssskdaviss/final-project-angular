@@ -1,3 +1,5 @@
+<button class="exit" (click)="closeCardModal()">X</button>
+
 <form [formGroup]="cardInfoForm" (ngSubmit)="onSubmit()">
   <label for="cardNumber">Card Number
     <input type="text" formControlName="cardNumber" placeholder="16 Digits" />
