@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, } from '@angu
 import { User, cryptoInterface } from 'src/app/core/interfaces/interfaces';
 import { NumberFormatPipe, StringToNumberPipe, } from '../../shared/pipes/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
+import { CryptoService } from 'src/app/shared/services/crypto.service';
 
 @Component({
   selector: 'app-buy-crypto',
@@ -32,6 +33,7 @@ export class BuyCryptoComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private cd: ChangeDetectorRef,
+    public cryptoService: CryptoService,
     private dialogRef: MatDialogRef<BuyCryptoComponent> //close modal
   ) {
     this.buyForm = this.fb.group({
@@ -88,6 +90,10 @@ export class BuyCryptoComponent {
             priceUsd: Number(this.usdAmount),
           });
 
+          // Update balance in the service
+          const newBalance = user.balance - Number(this.usdAmount);
+          this.cryptoService.updateUserBalance(newBalance);
+
           this.http
             .patch<User>(`http://localhost:3000/users/${userId}`, {
               crypto: cryptoArr,
@@ -102,8 +108,10 @@ export class BuyCryptoComponent {
             });
         });
     }
+    
+
   }
-  closeBuyModal(): void {
-    this.dialogRef.close();
-  }
+  // closeBuyModal(): void {
+  //   this.dialogRef.close();
+  // }
 }

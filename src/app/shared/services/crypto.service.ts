@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  Observable, catchError, throwError } from 'rxjs';
-import {  CryptoResponse } from '../../core/interfaces/interfaces';
+import { Observable, catchError, throwError, BehaviorSubject } from 'rxjs';
+import { CryptoResponse } from '../../core/interfaces/interfaces';
 import { CryptoHistoryResponse } from '../../core/interfaces/interfaces';
 
 @Injectable({
@@ -9,6 +9,14 @@ import { CryptoHistoryResponse } from '../../core/interfaces/interfaces';
 })
 export class CryptoService {
   constructor(private http: HttpClient) { }
+
+
+  public userBalanceSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  userBalance$: Observable<number> = this.userBalanceSubject.asObservable();
+
+  updateUserBalance(newBalance: number) {
+    this.userBalanceSubject.next(newBalance);
+  }
 
 
   fetchCryptoData(): Observable<CryptoResponse> {
@@ -22,10 +30,7 @@ export class CryptoService {
   }
 
 
-  fetchCryptoHistory(
-    cryptoId: string,
-    interval: string
-  ): Observable<CryptoHistoryResponse> {
+  fetchCryptoHistory(cryptoId: string, interval: string): Observable<CryptoHistoryResponse> {
     const apiUrl = `https://api.coincap.io/v2/assets/${cryptoId}/history?interval=${interval}`;
     return this.http.get<CryptoHistoryResponse>(apiUrl).pipe(
       catchError((error) => {

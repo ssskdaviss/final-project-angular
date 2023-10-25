@@ -105,6 +105,10 @@ export class SellCryptoComponent implements OnInit {
             priceUsd: this.livePrice * Number(this.cryptoAmount),
           });
 
+            // Update balance in the service
+          const newBalance = user.balance + this.livePrice * Number(this.cryptoAmount);
+          this.cryptoService.updateUserBalance(newBalance);
+
           this.http
             .patch<User>(`http://localhost:3000/users/${userId}`, {
               crypto: cryptoArr,
@@ -124,7 +128,7 @@ export class SellCryptoComponent implements OnInit {
       this.router.navigate(["/wallet"])
     })
   }
-  closeSellModal(): void {
-    this.dialogRef.close();
-  }
+  // closeSellModal(): void {
+  //   this.dialogRef.close();
+  // }
 }

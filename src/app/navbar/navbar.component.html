@@ -43,7 +43,7 @@
       <ul class="right-ul">
         <li *ngIf="userIsLoggedIn()">
           <div class="accaunt" *ngIf="user">
-            <i class="fa-solid fa-dollar-sign"></i> {{ user.balance | numberFormat }}
+            <i class="fa-solid fa-dollar-sign"></i> {{ (cryptoservices.userBalance$ | async ) || 0   | numberFormat }}
           </div>
         </li>
         <li *ngIf="!userIsLoggedIn()">

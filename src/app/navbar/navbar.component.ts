@@ -40,6 +40,8 @@ export class NavbarComponent implements OnInit{
         (user) => {
           this.user = user;
           this.changeDetectorRef.markForCheck();
+          this.cryptoservices.updateUserBalance(user.balance);
+
         },
         (error) => {
           console.error('Failed to fetch user data:', error);
