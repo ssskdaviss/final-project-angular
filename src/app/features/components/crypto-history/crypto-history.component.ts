@@ -32,7 +32,7 @@ export class CryptoHistoryComponent implements OnInit {
     });
   }
 
-  fetchCryptoHistory() {
+  public fetchCryptoHistory() {
     this.cryptoService
       .fetchCryptoHistory(this.cryptoId, this.currentInterval)
       .subscribe(

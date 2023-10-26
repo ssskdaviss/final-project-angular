@@ -930,7 +930,7 @@
       "password": "12345678",
       "nickname": "nick",
       "phoneNumber": "+995555555555",
-      "balance": 728.6041070285397,
+      "balance": 718.5632566084951,
       "cardInfo": {
         "cardNumber": "1234567891234567",
         "expirationDate": "12/22",
@@ -947,15 +947,15 @@
         },
         {
           "id": "bitcoin",
-          "cryptoAmount": 0.0014504803581792216
+          "cryptoAmount": 0.0017395965586363394
         },
         {
           "id": "ethereum",
-          "cryptoAmount": 0.011217670301848436
+          "cryptoAmount": 0.016633147133141846
         },
         {
           "id": "tether",
-          "cryptoAmount": 19.991893372465256
+          "cryptoAmount": 19.98851052169107
         },
         {
           "id": "binance-coin",
@@ -966,15 +966,41 @@
           "cryptoAmount": 9.998272197156991
         },
         {
-          "id": "chainlink",
-          "cryptoAmount": 0.8937800353641991
-        },
-        {
           "id": "xrp",
           "cryptoAmount": 18.11021461285713
         }
       ],
       "history": [
+        {
+          "id": "chainlink",
+          "type": "sell",
+          "amount": 0.8937800353641991,
+          "priceUsd": 9.955342106043828
+        },
+        {
+          "id": "tether",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.003807473911477
+        },
+        {
+          "id": "tether",
+          "type": "buy",
+          "amount": 9.996617149225811,
+          "priceUsd": 10
+        },
+        {
+          "id": "ethereum",
+          "type": "buy",
+          "amount": 0.005415476831293411,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00028911620045711766,
+          "priceUsd": 10
+        },
         {
           "id": "tether",
           "type": "sell",

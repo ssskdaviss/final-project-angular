@@ -55,8 +55,8 @@ export class WalletComponent implements OnInit {
     );
   }
 
-  dialogRef!: MatDialogRef<SellCryptoComponent>;
-  openSellModal(crypto: { id: string; cryptoAmount: number }): void {
+  public dialogRef!: MatDialogRef<SellCryptoComponent>;
+  public openSellModal(crypto: { id: string; cryptoAmount: number }): void {
     this.dialogRef = this.dialog.open(SellCryptoComponent, {
       data: {
         id: crypto.id,

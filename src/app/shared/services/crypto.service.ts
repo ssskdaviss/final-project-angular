@@ -14,12 +14,12 @@ export class CryptoService {
   public userBalanceSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   userBalance$: Observable<number> = this.userBalanceSubject.asObservable();
 
-  updateUserBalance(newBalance: number) {
+  public updateUserBalance(newBalance: number) {
     this.userBalanceSubject.next(newBalance);
   }
 
 
-  fetchCryptoData(): Observable<CryptoResponse> {
+  public fetchCryptoData(): Observable<CryptoResponse> {
     const apiUrl = 'https://api.coincap.io/v2/assets';
     return this.http.get<CryptoResponse>(apiUrl).pipe(
       catchError((error) => {
@@ -30,7 +30,7 @@ export class CryptoService {
   }
 
 
-  fetchCryptoHistory(cryptoId: string, interval: string): Observable<CryptoHistoryResponse> {
+  public fetchCryptoHistory(cryptoId: string, interval: string): Observable<CryptoHistoryResponse> {
     const apiUrl = `https://api.coincap.io/v2/assets/${cryptoId}/history?interval=${interval}`;
     return this.http.get<CryptoHistoryResponse>(apiUrl).pipe(
       catchError((error) => {

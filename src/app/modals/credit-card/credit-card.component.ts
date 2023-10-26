@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
 import { ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { CryptoService } from 'src/app/shared/services/crypto.service';
 @Component({
   selector: 'app-credit-card',
   standalone: true,
@@ -23,6 +23,7 @@ export class CreditCardComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
+    private cryptoService: CryptoService,
     private dialogRef: MatDialogRef<CreditCardComponent> //close modal
   ) {
 
@@ -46,6 +47,7 @@ export class CreditCardComponent {
         })
         .subscribe((user: User) => {
           console.log('Card info updated:', user);
+          this.cryptoService.updateUserBalance(user.balance);
           this.cardInfoForm.reset();
           this.dialogRef.close();
           this.router.navigate(['/userProfile']);
@@ -79,7 +81,7 @@ export class CreditCardComponent {
     }
     return null;
   }
-  closeCardModal(): void {
+  public closeCardModal(): void {
     this.dialogRef.close();
   }
 }

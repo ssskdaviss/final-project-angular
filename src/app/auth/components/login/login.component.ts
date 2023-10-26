@@ -25,14 +25,13 @@ export class LoginComponent {
     private cdr: ChangeDetectorRef
   ) { }
 
-
   ngOnInit(): void {
     if (localStorage.getItem('email')) {
       this.router.navigate(['/home'])
     }
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
       this.http.get<User[]>('http://localhost:3000/users').subscribe(

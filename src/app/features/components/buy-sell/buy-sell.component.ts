@@ -40,8 +40,8 @@ export class BuySellComponent {
     );
   }
 
-  dialogRef!: MatDialogRef<BuyCryptoComponent>;
-  openBuyModal(crypto: CryptoData): void {
+  public dialogRef!: MatDialogRef<BuyCryptoComponent>;
+  public openBuyModal(crypto: CryptoData): void {
     this.dialogRef = this.dialog.open(BuyCryptoComponent, {
       data: {
         id: crypto.id,
@@ -56,11 +56,11 @@ export class BuySellComponent {
     });
   }
 
-  getChangeTextClass(changePercent: number): string {
+  public getChangeTextClass(changePercent: number): string {
     return changePercent < 0 ? 'red-text' : 'green-text';
   }
 
-  filterCryptoData(): CryptoData[] {
+  public filterCryptoData(): CryptoData[] {
     const searchText = this.searchText.toLowerCase();
     return this.cryptoData.filter(crypto =>
       crypto.name.toLowerCase().includes(searchText) ||

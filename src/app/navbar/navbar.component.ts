@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy,ChangeDetectorRef,Component,OnInit} from '@angular/core';
-import {MatDialog,MatDialogModule,MatDialogRef,} from '@angular/material/dialog';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogModule, MatDialogRef, } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { CreditCardComponent } from '../modals/credit-card/credit-card.component';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ import { NumberFormatPipe } from '../shared/pipes/number-format.pipe';
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   user: User | null = null;
 
   constructor(
@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit{
     private http: HttpClient,
     private changeDetectorRef: ChangeDetectorRef
   ) { }
+  
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
     if (userId) {
@@ -50,18 +51,20 @@ export class NavbarComponent implements OnInit{
     }
 
   }
-  dialogRef!: MatDialogRef<CreditCardComponent>;
-  openCardModal(): void {
+  public dialogRef!: MatDialogRef<CreditCardComponent>;
+  public openCardModal(): void {
     this.dialogRef = this.dialog.open(CreditCardComponent, {});
 
     this.dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
   }
-  closeCardModal(): void {
+
+  public closeCardModal(): void {
     this.dialogRef.close();
   }
-  logout(): void {
+
+  public logout(): void {
     const confirmLogout = window.confirm('Are you sure you want to Log Out?');
     if (confirmLogout) {
       localStorage.removeItem('email');
@@ -70,7 +73,8 @@ export class NavbarComponent implements OnInit{
       this.router.navigate(['/home']);
     }
   }
-  userIsLoggedIn(): boolean {
+
+  public userIsLoggedIn(): boolean {
     const email = localStorage.getItem('email');
     const password = localStorage.getItem('password');
     return !!email && !!password;

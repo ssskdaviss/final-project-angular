@@ -12,7 +12,7 @@ import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserProfileComponent implements OnInit {
-  user: User | null = null;
+  public user: User | null = null;
 
   constructor(
     private http: HttpClient,

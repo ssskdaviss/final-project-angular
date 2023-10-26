@@ -128,7 +128,7 @@ export class SellCryptoComponent implements OnInit {
       this.router.navigate(["/wallet"])
     })
   }
-  closeSellModal(): void {
+  public closeSellModal(): void {
     this.dialogRef.close();
   }
 }

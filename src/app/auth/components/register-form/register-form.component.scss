@@ -62,12 +62,15 @@
     }
 
     .reset {
-      background-color: transparent;
+      background-color: var(--red-c);
+      color: #fff;
       border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
       font-size: 16px;
-      margin-top: 10px;
-      color: var(--primary-c);
+      margin-top: 20px;
       cursor: pointer;
+      margin-left: 5px;
     }
   }
 }
