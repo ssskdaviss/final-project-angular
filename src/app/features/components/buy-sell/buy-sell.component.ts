@@ -4,7 +4,7 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
 import { CryptoData, } from 'src/app/core/interfaces/interfaces';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { BuyCryptoComponent } from 'src/app/modals/buy-crypto/buy-crypto.component';
+import { BuyCryptoComponent } from '../../modals/buy-crypto/buy-crypto.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({

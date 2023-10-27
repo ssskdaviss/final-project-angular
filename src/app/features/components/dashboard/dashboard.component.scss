@@ -99,14 +99,17 @@ div {
   }
 }
 @media screen and (max-width: 680px) {
- .change{
-  display: none;
- }
- .chart{
-  display: none;
- }
- .market-cap{
-  display: none;
+ .container{
+  padding-inline: 0px;
+  .change{
+    display: none;
+   }
+   .chart{
+    display: none;
+   }
+   .market-cap{
+    display: none;
+   }
  }
 }
 

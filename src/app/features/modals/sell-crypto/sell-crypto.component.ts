@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { User } from 'src/app/core/interfaces/interfaces';
-import { NumberFormatPipe, StringToNumberPipe, } from '../../shared/pipes/number-format.pipe';
+import { NumberFormatPipe, StringToNumberPipe, } from '../../../shared/pipes/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
 import { Router } from '@angular/router';

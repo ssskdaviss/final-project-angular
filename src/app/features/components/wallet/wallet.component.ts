@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CryptoData, User } from 'src/app/core/interfaces/interfaces';
-import { SellCryptoComponent } from 'src/app/modals/sell-crypto/sell-crypto.component';
+import { SellCryptoComponent } from '../../modals/sell-crypto/sell-crypto.component';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy } from '@angular/core';

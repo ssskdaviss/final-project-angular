@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule, MatDialogRef, } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
-import { CreditCardComponent } from '../modals/credit-card/credit-card.component';
+import { CreditCardComponent } from '../features/modals/credit-card/credit-card.component';
 import { Router } from '@angular/router';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CryptoService } from '../shared/services/crypto.service';

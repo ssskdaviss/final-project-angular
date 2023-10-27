@@ -65,6 +65,7 @@ nav {
     background-color: rgb(196, 196, 196);
     padding: 8px 16px;
     border-radius: 4px;
+    font-weight: 600;
   }
 }
 
@@ -97,7 +98,12 @@ nav {
 
     .right-button-container a,
     .right-button-container button {
-      padding: 4px 8px;
+      padding: 6px 12px;
+    }
+    .accaunt {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 600;
     }
   }
 }
@@ -122,15 +128,20 @@ nav {
     }
 
     img {
-      width: 90px;
+      max-width: 50px;
     }
 
     .right-button-container a,
     .right-button-container button {
-      padding: 1px 2px;
+      padding: 6px 12px;
       border-radius: 2px;
       cursor: pointer;
       font-size: 8px;
+    }
+    .accaunt {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 600;
     }
   }
 }
