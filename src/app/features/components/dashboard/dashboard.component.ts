@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class DashboardComponent {
   public cryptoData: CryptoData[] = [];
   public searchText: string = '';
@@ -29,6 +30,7 @@ export class DashboardComponent {
     this.fetchCryptoData();
   }
 
+  
   public fetchCryptoData() {
     this.cryptoService.fetchCryptoData().subscribe(
       (response) => {

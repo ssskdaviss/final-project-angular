@@ -930,7 +930,7 @@
       "password": "12345678",
       "nickname": "nick",
       "phoneNumber": "+995555555555",
-      "balance": 738.5267388583147,
+      "balance": 782.0372026660098,
       "cardInfo": {
         "cardNumber": "1234567891234567",
         "expirationDate": "12/22",
@@ -938,35 +938,265 @@
       },
       "crypto": [
         {
-          "id": "polygon",
-          "cryptoAmount": 6.040242766943013
-        },
-        {
-          "id": "wrapped-bitcoin",
-          "cryptoAmount": 0.0002968261646566864
+          "id": "solana",
+          "cryptoAmount": 0.31167043448333615
         },
         {
           "id": "bitcoin",
-          "cryptoAmount": 0.002032934305183164
-        },
-        {
-          "id": "ethereum",
-          "cryptoAmount": 0.022228290670033568
-        },
-        {
-          "id": "tether",
-          "cryptoAmount": 9.988510521691069
+          "cryptoAmount": 0.0005842862809882179
         },
         {
           "id": "usd-coin",
-          "cryptoAmount": 9.998272197156991
-        },
-        {
-          "id": "xrp",
-          "cryptoAmount": 18.11021461285713
+          "cryptoAmount": 79.89243064135755
         }
       ],
       "history": [
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.010843354068083
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.010843354068083
+        },
+        {
+          "id": "usd-coin",
+          "type": "buy",
+          "amount": 99.89243064135755,
+          "priceUsd": 100
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 0.9837523613178991,
+          "priceUsd": 0.9850171757090129
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 9,
+          "priceUsd": 9.011429696215874
+        },
+        {
+          "id": "tether",
+          "type": "sell",
+          "amount": 9.985501428216939,
+          "priceUsd": 10.000454067952017
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029214314049410894,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029214314049410894,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "sell",
+          "amount": 0.0005847751204230221,
+          "priceUsd": 20.027938524963574
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029197968612402944,
+          "priceUsd": 10
+        },
+        {
+          "id": "solana",
+          "type": "buy",
+          "amount": 0.31167043448333615,
+          "priceUsd": 10
+        },
+        {
+          "id": "usd-coin",
+          "type": "buy",
+          "amount": 9.9837523613179,
+          "priceUsd": 10
+        },
+        {
+          "id": "tether",
+          "type": "buy",
+          "amount": 9.985501428216939,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002927954342989926,
+          "priceUsd": 10
+        },
+        {
+          "id": "solana",
+          "type": "sell",
+          "amount": 0.3108232433057183,
+          "priceUsd": 9.972817723983919
+        },
+        {
+          "id": "xrp",
+          "type": "sell",
+          "amount": 36.298952789063414,
+          "priceUsd": 19.841436512542128
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 59.915009491244916,
+          "priceUsd": 60.012515658326954
+        },
+        {
+          "id": "tether",
+          "type": "sell",
+          "amount": 9.988510521691069,
+          "priceUsd": 10.00301346256446
+        },
+        {
+          "id": "ethereum",
+          "type": "sell",
+          "amount": 0.07850105583442821,
+          "priceUsd": 140.04455880584064
+        },
+        {
+          "id": "bitcoin",
+          "type": "sell",
+          "amount": 0.0035040211828701578,
+          "priceUsd": 119.6747207230005
+        },
+        {
+          "id": "polygon",
+          "type": "sell",
+          "amount": 6.040242766943013,
+          "priceUsd": 3.7782040879011203
+        },
+        {
+          "id": "binance-coin",
+          "type": "sell",
+          "amount": 0.4867770857611705,
+          "priceUsd": 110.0311095469808
+        },
+        {
+          "id": "cardano",
+          "type": "sell",
+          "amount": 343.4729397731813,
+          "priceUsd": 100.00294283129651
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.01402683544942
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029265735481658143,
+          "priceUsd": 10
+        },
+        {
+          "id": "binance-coin",
+          "type": "buy",
+          "amount": 0.4422688618133517,
+          "priceUsd": 100
+        },
+        {
+          "id": "cardano",
+          "type": "buy",
+          "amount": 343.4729397731813,
+          "priceUsd": 100
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.004266303597868
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.004266303597868
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.004266303597868
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029460295371915024,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029460295371915024,
+          "priceUsd": 10
+        },
+        {
+          "id": "xrp",
+          "type": "buy",
+          "amount": 18.188738176206282,
+          "priceUsd": 10
+        },
+        {
+          "id": "binance-coin",
+          "type": "buy",
+          "amount": 0.04450822394781883,
+          "priceUsd": 10
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.00029460295371915024,
+          "priceUsd": 10
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "type": "sell",
+          "amount": 0.0002968261646566864,
+          "priceUsd": 10.068255421475538
+        },
+        {
+          "id": "usd-coin",
+          "type": "sell",
+          "amount": 10,
+          "priceUsd": 10.007537114562691
+        },
+        {
+          "id": "solana",
+          "type": "buy",
+          "amount": 0.3108232433057183,
+          "priceUsd": 10
+        },
+        {
+          "id": "usd-coin",
+          "type": "buy",
+          "amount": 99.91673729408792,
+          "priceUsd": 100
+        },
+        {
+          "id": "bitcoin",
+          "type": "buy",
+          "amount": 0.0002946206617129617,
+          "priceUsd": 10
+        },
+        {
+          "id": "ethereum",
+          "type": "buy",
+          "amount": 0.05627276516439463,
+          "priceUsd": 100
+        },
         {
           "id": "tether",
           "type": "sell",

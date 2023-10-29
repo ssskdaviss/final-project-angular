@@ -4,6 +4,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/interfaces';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -12,6 +13,7 @@ import { User } from 'src/app/core/interfaces/interfaces';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class LoginComponent {
   loginForm = this.fb.group({
     email: ['', [Validators.required]],
@@ -36,6 +38,7 @@ export class LoginComponent {
       const loginData = this.loginForm.value;
       this.http.get<User[]>('http://localhost:3000/users').subscribe(
         (users: User[]) => {
+          //check email and password
           const authenticatedUser = users.find(
             (user) =>
               user.email === loginData.email &&

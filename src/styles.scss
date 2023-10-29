@@ -1,10 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Raleway:wght@100;400;700;800;900&display=swap");
 
-
-:root{
-  --primary-c:#0054fe;
-  --green-c:#088450;
+:root {
+  --primary-c: #0054fe;
+  --green-c: #088450;
   --red-c: #840808;
 }
 
@@ -31,8 +30,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--primary-c);
 }
-
-
 
 .container {
   max-width: 1400px;

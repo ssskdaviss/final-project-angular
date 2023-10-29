@@ -12,24 +12,19 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
   standalone: true,
   templateUrl: './buy-crypto.component.html',
   styleUrls: ['./buy-crypto.component.scss'],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    NumberFormatPipe,
-    FormsModule,
-    StringToNumberPipe,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, NumberFormatPipe, FormsModule, StringToNumberPipe,],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BuyCryptoComponent {
   userBalance!: number;
   cryptoAmount!: number;
-
   buyForm: FormGroup;
   @Input() data!: cryptoInterface;
   usdAmount: string = '10';
+
   constructor(
-    @Inject(MAT_DIALOG_DATA) public crypto: cryptoInterface,
+    @Inject(MAT_DIALOG_DATA)
+    public crypto: cryptoInterface,
     private fb: FormBuilder,
     private http: HttpClient,
     private cd: ChangeDetectorRef,
@@ -59,7 +54,6 @@ export class BuyCryptoComponent {
   public onSubmit(): void {
     if (this.buyForm.valid) {
       const userId = localStorage.getItem('userId');
-
       this.http
         .get<User>(`http://localhost:3000/users/${userId}`, {})
         .subscribe((user: User) => {
@@ -67,22 +61,23 @@ export class BuyCryptoComponent {
             alert('Not enough money');
             return;
           }
+          //check if crypto already exist in users acc
           let cryptoArr = user.crypto;
           if (
             cryptoArr.findIndex((object) => object.id === this.crypto.id) === -1
-          ) {
+          ) {           
             cryptoArr.push({
               id: this.crypto.id,
               cryptoAmount: Number(this.usdAmount) / this.crypto.priceUsd,
             });
           } else {
+            //update
             cryptoArr[
               cryptoArr.findIndex((object) => object.id === this.crypto.id)
             ].cryptoAmount += Number(this.usdAmount) / this.crypto.priceUsd;
           }
-
+          //add in history
           let history = user.history;
-
           history.unshift({
             id: this.crypto.id,
             type: 'buy',
@@ -94,6 +89,7 @@ export class BuyCryptoComponent {
           const newBalance = user.balance - Number(this.usdAmount);
           this.cryptoService.updateUserBalance(newBalance);
 
+          //update user object in the API
           this.http
             .patch<User>(`http://localhost:3000/users/${userId}`, {
               crypto: cryptoArr,
@@ -108,7 +104,6 @@ export class BuyCryptoComponent {
             });
         });
     }
-    
 
   }
   public closeBuyModal(): void {

@@ -1,21 +1,22 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
-import { CryptoData, } from 'src/app/core/interfaces/interfaces';
+import { CryptoData } from 'src/app/core/interfaces/interfaces';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { BuyCryptoComponent } from '../../modals/buy-crypto/buy-crypto.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-buy-sell',
+  selector: 'app-buy',
   standalone: true,
   imports: [CommonModule, NumberFormatPipe, BuyCryptoComponent, FormsModule],
-  templateUrl: './buy-sell.component.html',
-  styleUrls: ['./buy-sell.component.scss'],
+  templateUrl: './buy.component.html',
+  styleUrls: ['./buy.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BuySellComponent {
+
+export class BuyComponent {
   public cryptoData: CryptoData[] = [];
   public searchText: string = '';
 
@@ -39,10 +40,10 @@ export class BuySellComponent {
       }
     );
   }
-
   public dialogRef!: MatDialogRef<BuyCryptoComponent>;
   public openBuyModal(crypto: CryptoData): void {
     this.dialogRef = this.dialog.open(BuyCryptoComponent, {
+      //pass data to modal
       data: {
         id: crypto.id,
         name: crypto.name,

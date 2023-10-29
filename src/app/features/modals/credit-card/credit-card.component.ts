@@ -8,6 +8,7 @@ import { ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
+
 @Component({
   selector: 'app-credit-card',
   standalone: true,
@@ -16,6 +17,7 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
   styleUrls: ['./credit-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class CreditCardComponent {
   cardInfoForm: FormGroup;
 
@@ -29,8 +31,7 @@ export class CreditCardComponent {
 
     this.cardInfoForm = this.fb.group({
       cardNumber: ['', [Validators.required, this.cardNumberValidator]],
-      expirationDate: ['', [Validators.required, this.expirationDateValidator],
-      ],
+      expirationDate: ['', [Validators.required, this.expirationDateValidator],],
       cvc: ['', [Validators.required, this.cvcValidator]],
     });
   }

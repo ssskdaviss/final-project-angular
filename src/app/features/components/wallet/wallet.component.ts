@@ -17,11 +17,13 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
   styleUrls: ['./wallet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class WalletComponent implements OnInit {
   public cryptoData: CryptoData[] = [];
-  livePrice: number = 0;
-  user: User | null = null;
+  public livePrice: number = 0;
+  public user: User | null = null;
   public searchText: string = '';
+
   constructor(
     private http: HttpClient,
     private changeDetectorRef: ChangeDetectorRef,
@@ -36,7 +38,7 @@ export class WalletComponent implements OnInit {
     if (userId) {
       this.http.get<User>(`http://localhost:3000/users/${userId}`).subscribe(
         (user) => {
-          this.user = user;
+          this.user = user; // Assign fetched user data to the user property
           this.changeDetectorRef.markForCheck();
         },
         (error) => {
@@ -44,9 +46,10 @@ export class WalletComponent implements OnInit {
         }
       );
     }
+
     this.cryptoService.fetchCryptoData().subscribe(
       (response) => {
-        this.cryptoData = response.data;
+        this.cryptoData = response.data; // Assign fetched crypto data to the component property
         this.cd.markForCheck();
       },
       (error) => {
@@ -69,58 +72,56 @@ export class WalletComponent implements OnInit {
     });
   }
 
+  public sellAllCrypto(id: string, amount: number): void {
+    //check index of crypto
+    let index = this.cryptoData.findIndex((object) => object.id === id);
+    if (index === -1) return;
+    
+    this.livePrice = this.cryptoData[index].priceUsd;
 
-    //sell all crypto
-    public sellCrypto(id: string, amount: number): void {
-      let index = this.cryptoData.findIndex((object) => object.id === id);
-      if (index === -1) return;
-      this.livePrice = this.cryptoData[index].priceUsd;
-    
-      const userId = localStorage.getItem('userId');
-      this.http
-        .get<User>(`http://localhost:3000/users/${userId}`, {})
-        .subscribe((user: User) => {
-          let cryptoArr = user.crypto;
-          let cryptoIndex = cryptoArr.findIndex((object) => object.id === id);
-    
-          cryptoArr.splice(cryptoIndex, 1);
-    
-          let history = user.history;
-    
-          history.unshift({
-            id: id,
-            type: 'sell',
-            amount: amount,
-            priceUsd: this.livePrice * amount,
+    const userId = localStorage.getItem('userId');
+    this.http
+      .get<User>(`http://localhost:3000/users/${userId}`, {})
+      .subscribe((user: User) => {
+        let cryptoArr = user.crypto;
+        let cryptoIndex = cryptoArr.findIndex((object) => object.id === id);
+        // Remove the sold crypto
+        cryptoArr.splice(cryptoIndex, 1);
+
+        let history = user.history;
+        history.unshift({
+          id: id,
+          type: 'sell',
+          amount: amount,
+          priceUsd: this.livePrice * amount,
+        });
+
+        //update user object
+        this.http
+          .patch<User>(`http://localhost:3000/users/${userId}`, {
+            crypto: cryptoArr,
+            balance: user.balance + this.livePrice * Number(amount),
+            history: history,
+          })
+          .subscribe(() => {
+            this.http.get<User>(`http://localhost:3000/users/${userId}`).subscribe(
+              (updatedUser) => {
+                const newBalance = updatedUser.balance;
+                this.cryptoService.updateUserBalance(newBalance);
+                console.log('Crypto updated:', updatedUser);
+                this.cd.markForCheck();
+              },
+              (error) => {
+                console.error('Failed to fetch updated user data:', error);
+              }
+            );
           });
-    
-          this.http
-            .patch<User>(`http://localhost:3000/users/${userId}`, {
-              crypto: cryptoArr,
-              balance: user.balance + this.livePrice * Number(amount),
-              history: history,
-            })
-            .subscribe((user: User) => {
-              this.http.get<User>(`http://localhost:3000/users/${userId}`).subscribe(
-                (updatedUser) => {
-                  const newBalance = updatedUser.balance;
-    
-                  this.cryptoService.updateUserBalance(newBalance);
-    
-                  console.log('Crypto updated:', updatedUser);
-                  this.cd.markForCheck();
-                },
-                (error) => {
-                  console.error('Failed to fetch updated user data:', error);
-                }
-              );
-            });
-        });
-    
-      this.router
-        .navigateByUrl('/buySell', { skipLocationChange: true })
-        .then(() => {
-          this.router.navigate(['/wallet']);
-        });
-    }
+      });
+
+    this.router
+      .navigateByUrl('/buy', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['/wallet']);
+      });
+  }
 }

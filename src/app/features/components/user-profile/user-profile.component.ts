@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { User } from 'src/app/core/interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
+
 @Component({
   selector: 'app-user-profile',
   standalone: true,
@@ -11,6 +12,7 @@ import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
   styleUrls: ['./user-profile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class UserProfileComponent implements OnInit {
   public user: User | null = null;
 

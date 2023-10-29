@@ -13,25 +13,22 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./register-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class RegisterFormComponent implements OnInit {
-  signUpForm = this.fb.group(
-    {
-      email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        [Validators.required, this.englishValidator, Validators.minLength(8)],
-      ],
-      nickname: ['', [Validators.required, this.englishValidator]],
-      phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
-      balance: 0,
-      cardInfo: {
-        cardNumber: '',
-        expirationDate: '',
-        cvc: '',
-      },
-      crypto: [[]],
-      history: [[]]
+  signUpForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, this.englishValidator, Validators.minLength(8)],],
+    nickname: ['', [Validators.required, this.englishValidator]],
+    phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
+    balance: 0,
+    cardInfo: {
+      cardNumber: '',
+      expirationDate: '',
+      cvc: '',
     },
+    crypto: [[]],
+    history: [[]]
+  },
     {
       validators: [],
     }
@@ -57,6 +54,7 @@ export class RegisterFormComponent implements OnInit {
 
       this.http.get<User[]>('http://localhost:3000/users').subscribe(
         (users: User[]) => {
+          //check if email already exists
           const emailExists = users.some(
             (user) => user.email === userData.email
           );

@@ -13,23 +13,18 @@ import { Router } from '@angular/router';
   standalone: true,
   templateUrl: './sell-crypto.component.html',
   styleUrls: ['./sell-crypto.component.scss'],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    NumberFormatPipe,
-    FormsModule,
-    StringToNumberPipe,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, NumberFormatPipe, FormsModule, StringToNumberPipe,],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class SellCryptoComponent implements OnInit {
   userBalance!: number;
   usdAmount!: number;
   livePrice: number = 0;
-
+  cryptoAmount: string = '10';
   sellForm: FormGroup;
   @Input() data!: { id: string; cryptoAmount: number };
-  cryptoAmount: string = '10';
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public crypto: { id: string; cryptoAmount: number },
@@ -46,16 +41,18 @@ export class SellCryptoComponent implements OnInit {
     });
     this.getBalance();
   }
+
   ngOnInit(): void {
+    //Fetch and update crypto live price
     this.cryptoService.fetchCryptoData().subscribe(
       (response) => {
         let arrIndex = response.data.findIndex(
-          (object) => object.id === this.crypto.id
-        );
+          (object) => object.id === this.crypto.id);
         if (arrIndex === -1) {
           alert('Something went wrong');
           return;
         }
+
         this.livePrice = response.data[arrIndex].priceUsd;
         this.cd.markForCheck();
       },
@@ -88,16 +85,13 @@ export class SellCryptoComponent implements OnInit {
           let cryptoIndex = cryptoArr.findIndex(
             (object) => object.id === this.crypto.id
           );
-
           if (cryptoArr[cryptoIndex].cryptoAmount < Number(this.cryptoAmount)) {
             alert('Not enough crypto on the account');
             return;
           }
-
           cryptoArr[cryptoIndex].cryptoAmount -= Number(this.cryptoAmount);
 
           let history = user.history;
-
           history.unshift({
             id: this.crypto.id,
             type: 'sell',
@@ -105,10 +99,11 @@ export class SellCryptoComponent implements OnInit {
             priceUsd: this.livePrice * Number(this.cryptoAmount),
           });
 
-            // Update balance in the service
+          // Update balance in the service
           const newBalance = user.balance + this.livePrice * Number(this.cryptoAmount);
           this.cryptoService.updateUserBalance(newBalance);
 
+          //update user object
           this.http
             .patch<User>(`http://localhost:3000/users/${userId}`, {
               crypto: cryptoArr,
@@ -124,7 +119,7 @@ export class SellCryptoComponent implements OnInit {
             });
         });
     }
-    this.router.navigateByUrl('/buySell', { skipLocationChange: true }).then(() => {
+    this.router.navigateByUrl('/buy', { skipLocationChange: true }).then(() => {
       this.router.navigate(["/wallet"])
     })
   }

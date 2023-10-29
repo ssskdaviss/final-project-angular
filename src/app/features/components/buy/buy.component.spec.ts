@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BuySellComponent } from './buy-sell.component';
+import { BuyComponent } from './buy.component';
 
-describe('BuySellComponent', () => {
-  let component: BuySellComponent;
-  let fixture: ComponentFixture<BuySellComponent>;
+describe('BuyComponent', () => {
+  let component: BuyComponent;
+  let fixture: ComponentFixture<BuyComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [BuySellComponent]
+      imports: [BuyComponent]
     });
-    fixture = TestBed.createComponent(BuySellComponent);
+    fixture = TestBed.createComponent(BuyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -13,6 +13,7 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./crypto-history.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class CryptoHistoryComponent implements OnInit {
   public cryptoId!: string;
   public cryptoHistory: CryptoHistoryData[] = [];
@@ -51,6 +52,7 @@ export class CryptoHistoryComponent implements OnInit {
     this.currentInterval = interval;
     this.fetchCryptoHistory();
   }
+  
   private initializeCryptoHistoryChart() {
     const ctx = document.getElementById(
       'cryptoHistoryChart'
@@ -80,10 +82,10 @@ export class CryptoHistoryComponent implements OnInit {
     } else {
       this.cryptoHistoryChart.data.labels = this.cryptoHistory.map((data) =>
         new Date(data.date).toLocaleDateString()
-      );
+      );// Update the chart's X labels with new data.
       this.cryptoHistoryChart.data.datasets[0].data = this.cryptoHistory.map(
         (data) => data.priceUsd
-      );
+      );// Update the chart's Y data points with new data.
       this.cryptoHistoryChart.update();
     }
   }

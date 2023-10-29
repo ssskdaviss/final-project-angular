@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { NumberFormatPipe } from 'src/app/shared/pipes/number-format.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CryptoService } from 'src/app/shared/services/crypto.service';
+
 @Component({
   selector: 'app-history',
   standalone: true,
@@ -13,6 +14,7 @@ import { CryptoService } from 'src/app/shared/services/crypto.service';
   styleUrls: ['./history.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class HistoryComponent implements OnInit {
   user: User | null = null;
   currentPage: number = 1;

@@ -8,21 +8,16 @@ import { CryptoService } from '../shared/services/crypto.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../core/interfaces/interfaces';
 import { NumberFormatPipe } from '../shared/pipes/number-format.pipe';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    CommonModule,
-    CreditCardComponent,
-    MatDialogModule,
-    RouterLink,
-    RouterOutlet,
-    NumberFormatPipe
-  ],
+  imports: [CommonModule, CreditCardComponent, MatDialogModule, RouterLink, RouterOutlet, NumberFormatPipe],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class NavbarComponent implements OnInit {
   user: User | null = null;
 
@@ -33,8 +28,9 @@ export class NavbarComponent implements OnInit {
     private http: HttpClient,
     private changeDetectorRef: ChangeDetectorRef
   ) { }
-  
+
   ngOnInit(): void {
+    //user balance
     const userId = localStorage.getItem('userId');
     if (userId) {
       this.http.get<User>(`http://localhost:3000/users/${userId}`).subscribe(
@@ -42,7 +38,6 @@ export class NavbarComponent implements OnInit {
           this.user = user;
           this.changeDetectorRef.markForCheck();
           this.cryptoservices.updateUserBalance(user.balance);
-
         },
         (error) => {
           console.error('Failed to fetch user data:', error);
@@ -51,10 +46,10 @@ export class NavbarComponent implements OnInit {
     }
 
   }
+
   public dialogRef!: MatDialogRef<CreditCardComponent>;
   public openCardModal(): void {
     this.dialogRef = this.dialog.open(CreditCardComponent, {});
-
     this.dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
@@ -74,6 +69,7 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  //conditional rendering
   public userIsLoggedIn(): boolean {
     const email = localStorage.getItem('email');
     const password = localStorage.getItem('password');

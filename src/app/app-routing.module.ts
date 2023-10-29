@@ -38,9 +38,9 @@ export const routes: Routes = [
    
   } ,
   {
-    path: 'buySell',
-    loadComponent: () => import('./features/components/buy-sell/buy-sell.component')
-      .then(m => m.BuySellComponent),
+    path: 'buy',
+    loadComponent: () => import('./features/components/buy/buy.component')
+      .then(m => m.BuyComponent),
       canActivate: [AuthGuard]
    
   } ,
